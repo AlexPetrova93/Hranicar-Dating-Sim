@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CharacterCardController : MonoBehaviour
@@ -12,10 +13,12 @@ public class CharacterCardController : MonoBehaviour
 
     private CharacterIcon[] icons;
 
+    private float lastMoved;
+
     private int curSelection;
 
-    private float horizontal;
-    private bool confirmed;
+    [HideInInspector] public UnityEvent<EPlayer, bool, int> confirmationChange;
+
 
     private void Start()
     {
@@ -23,48 +26,56 @@ public class CharacterCardController : MonoBehaviour
         card.sprite = cardSprites[curSelection];
 
         icons = GetComponentsInChildren<CharacterIcon>();
-        icons[0].Select();
+        icons[curSelection].Select();
+
+        confirmationChange = new UnityEvent<EPlayer, bool, int>();
     }
 
     private void Update()
     {
-        horizontal = Input.GetAxis(player.Horizontal());
-
         if (Input.GetButtonDown(player.Confirm()))
         {
             ConfirmSelection();
         }
 
-        if (horizontal > 0)
+        if (Input.GetAxis(player.Horizontal()) != 0)
         {
-
-        }
-        else if (horizontal < 0)
-        {
-
+            MoveSelection();
         }
 
     }
 
-    public void MoveSelection(int increment)
+    public void MoveSelection()
     {
-        curSelection = Mathf.Clamp(curSelection+increment, 0, cardSprites.Length);
+        // check time
+        if (Time.time - lastMoved < Utility.axisDelta) return;
+        lastMoved = Time.time;
+
+        // deselect and deconfirm current
+        icons[curSelection].Deselect();
+        Confirm(false);
+
+        // increment current selection
+        curSelection = (++curSelection) % Utility.numCharacterChoices;
+
+        // change character card sprite
         card.sprite = cardSprites[curSelection];
 
-        // deselect + select icons
+        // select the next icon
+        icons[curSelection].Select();
     }
 
-    public void Select(int index)
-    {
-        if (index < cardSprites.Length) card.sprite = cardSprites[index];
-    }
 
     public void ConfirmSelection()
     {
-        confirmed = true;
+        Confirm(true);
         // confirm icon
+        icons[curSelection].Confirm();
     }
 
-    public bool IsConfirmed() => confirmed;
+    private void Confirm(bool confirm)
+    {
+        confirmationChange.Invoke(player, confirm, curSelection);
+    }
 
 }

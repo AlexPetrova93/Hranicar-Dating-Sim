@@ -13,6 +13,7 @@ public class CharacterIcon : MonoBehaviour
 
     private void Start()
     {
+        targetGraphic = GetComponent<Image>();
         defaultIcon = targetGraphic.sprite;
     }
 

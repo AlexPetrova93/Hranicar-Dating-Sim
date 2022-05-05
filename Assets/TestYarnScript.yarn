@@ -1,7 +1,6 @@
-﻿title: Start
+﻿title: Left_1
 ---
-Wow!
-My first ever Yarn script in Unity!
+This is left player!
 
 -> Gosh!
 -> Incredible!
@@ -9,8 +8,15 @@ My first ever Yarn script in Unity!
 
 Anyway, time to get writing!
 ===
-title: Node
+title: Righ_1
 position: 0,100
 ---
+This is right player!
+
+-> Gosh!
+-> Incredible!
+-> I'm amazed!
+
+Anyway, time to get writing!
 
 ===
