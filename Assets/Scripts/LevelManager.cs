@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,15 +10,42 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private Sprite[] bgSprites;
 
-    public void SetCharacterSprites(Sprite left, Sprite right)
+    [SerializeField] private YarnProject[] yarnProjects;
+    private DialogueRunner dialogueRunner;
+
+    private GameManager gameManager;
+
+    private int currentSceneIndex;
+
+    public void Init(GameManager gameManager, Sprite left, Sprite right)
     {
-        Debug.Log("setting sprites");
         characterLeftRenderer.sprite = left;
         characterRightRenderer.sprite = right;
+        SetRandomBackground();
+
+        this.gameManager = gameManager;
     }
 
-    public void SetRandomBackground()
+    public void RestartScene()
+    {
+        if (!gameManager) gameManager = FindObjectOfType<GameManager>();
+
+        gameManager.RestartScene();
+    }
+
+    public void StartNextScene()
+    {
+        ++currentSceneIndex;
+    }
+
+    private void SetRandomBackground()
     {
         bgRenderer.sprite = bgSprites[Random.Range(0, bgSprites.Length)];
+    }
+
+    [YarnCommand("scene")]
+    public static void Scene(string text)
+    {
+        Debug.Log(text);
     }
 }

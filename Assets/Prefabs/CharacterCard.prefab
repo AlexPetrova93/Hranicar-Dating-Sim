@@ -136,11 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   card: {fileID: 8864319330698692554}
-  cardSprites:
-  - {fileID: 21300000, guid: d714a5233faed834a8cc19f78eb56ce4, type: 3}
-  - {fileID: 21300000, guid: 30af51e5b1aac8c4d8f98128f06d1d77, type: 3}
-  - {fileID: 21300000, guid: 30af51e5b1aac8c4d8f98128f06d1d77, type: 3}
-  - {fileID: 21300000, guid: 30af51e5b1aac8c4d8f98128f06d1d77, type: 3}
   confirmationChange:
     m_PersistentCalls:
       m_Calls: []
@@ -341,6 +336,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: selectedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f885a915a677e242bac9bee4bdce08b, type: 3}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: confirmedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 03b985306ed10ff48b7faca3015488df, type: 3}
     - target: {fileID: 7181844578017107839, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
       propertyPath: m_Name
       value: Icon
@@ -459,6 +462,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: selectedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 18a773ab02efd254facaa25e852d621a, type: 3}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: confirmedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 358530cc9b4134849b8243fc51de66e7, type: 3}
     - target: {fileID: 6961572961843697432, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -575,6 +586,14 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: fe08f56da06e460469bbc979d5f5678c, type: 3}
     - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
       propertyPath: confirmed
+      value: 
+      objectReference: {fileID: 21300000, guid: 6243e247dff6bf0458b1c2b9f98d7e1d, type: 3}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: selectedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: fe08f56da06e460469bbc979d5f5678c, type: 3}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: confirmedIcon
       value: 
       objectReference: {fileID: 21300000, guid: 6243e247dff6bf0458b1c2b9f98d7e1d, type: 3}
     - target: {fileID: 6961572961843697432, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
@@ -707,6 +726,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: selectedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 37fc765bb4f80ef44a8e31f5003c6829, type: 3}
+    - target: {fileID: 4244045636510585531, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
+      propertyPath: confirmedIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 672ce5132cadbaf4fac532cb9369c587, type: 3}
     - target: {fileID: 6961572961843697432, guid: 62e48ccda0a9bd44186b7ce9f95aca22, type: 3}
       propertyPath: m_Enabled
       value: 0

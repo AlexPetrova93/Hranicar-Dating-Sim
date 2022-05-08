@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleLeft: {fileID: 21300000, guid: 5996aa1cda11ad04a939b3c101320273, type: 3}
   bubbleRight: {fileID: 21300000, guid: 167f8ba2807b687428adb50369c47667, type: 3}
+  bubbleFlavor: {fileID: 21300000, guid: fb09636ad34d3314bad6e91fbc6b3591, type: 3}
   bubbleGraphic: {fileID: 7151134400996326985}
   thisLayoutGroup: {fileID: 2891460997332226475}
   childLayoutGroup: {fileID: 2290502723974066806}
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

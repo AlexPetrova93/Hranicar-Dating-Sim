@@ -1,0 +1,491 @@
+﻿title: Start
+position: -542,8
+---
+Left: Klasicky jdu pozdě, už to někdo zahajoval? Moc mě těší, mimochodem, pardon. 
+Right: *jemný oční kontakt* To je v pohodě, ono to znervozňuje plno lidí. 
+Left: Prosím?
+
+-> Right: Asi jsem to nezmínil, ale jsem:
+    <<jump Seznameni1A>>
+-> Right: Ah, asi nic, pardon. 
+    <<jump Seznameni1B>>
+-> Right: Víš o tom, ne?
+    <<jump Seznameni1C>>
+
+===
+
+title: Seznameni1A
+position: -317,-206
+---
+-> Right: kurátor
+-> Right: teoretik umění
+-> Right: umělec v post-praxi
+
+Left: Aha, to já:
+
+-> Left: tvoji práci samozřejmě znám
+    <<jump Seznameni1AA>>
+-> Left: se jen tak koukám
+    <<jump Seznameni1AB>>
+-> Left: trochu nevim, co si o tom mám myslet...
+    Left: Je umění po finanční krizi vůběc ještě možné?
+    <<jump Seznameni1AC>>
+
+===
+
+title: Seznameni1AA
+position: -112,-313
+---
+-> Right: Ajo, pamatuju si tě z dernisáže!
+-> Right: Ten poslední off space se mi moc nepovedl...
+
+Left: Ty ale děláš NFT, ne?
+Right: Ne...
+Left: Aha...
+Left: Tohle je teď trochu trapný
+
+-> Right: To je v pohodě... 
+-> Right: ...
+
+Left: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí, který by je z této situace vyprostil*
+
+-> Right: *pasivně agresivně udržuje oční kontakt*
+-> Right: *jakoby najednou zasažena krásou díla před sebou ho začne pozorovat ve snaze najít v díle nové téma, které by je z trapné situace vyprostilo*
+
+<<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+title: Seznameni1AB
+position: -102,-245
+---
+-> Right: Tak krása je konec konců v oku diváků!
+    Left: Tak tady asi jedině
+    Left: Nebo to byla snaha o flirt?
+-> Right: Taky si radši nic nemyslím, na výstavy chodím jen sbírat  inspiraci.
+    Left: A tady Tě něco inspiruje?
+    Left: Kromě mě samozřejmě...
+
+<<jump Seznameni1AB_1>>
+
+===
+title: Seznameni1AB_1
+position: 113,-277
+---
+-> Right: To asi nebylo myšlený takhle
+    Left: Ale mohlo by
+    Left: Už se mi víckrát stalo, že jsem to neodhadla správně
+    Right: ...
+    Left: Prostě chci říct, že je někdy lepší se zeptat, nevim, prostě, ADD mozek, neptej se
+    Left: Sorry, řikám blbosti, fakt nevim. Možná je to tím vzduchem, nebo těma lidma...?
+    Right: Pojď na vzduch
+-> Right: Samozřejmě
+
+<<scene "jdou ven před galerii">>
+
+Right: Kouříš?
+
+-> Left: Ne
+    Right: Já taky ne
+    Left: Aha...? Tak jdeme zase dovnitř?
+    -> Right: Ne
+    -> Right: Hele, akorát zahajujou...
+        Right: Chceš si to poslechnout?
+        -> Left: *zapálí si*
+        -> Left: *mlčky zůstane stát před galerií*
+-> Left: Příležitostně
+    Right: Je tohle příležitost?
+    -> Left: Si zas tak nefandi
+    -> Left: *zapálí si*
+        Right: Hele, akorát zahajujou...
+        Right: Chceš si to poslechnout?
+        -> Left: *zapálí si*
+        -> Left: *mlčky zůstane stát před galerií*
+
+<<jump End>>
+===
+
+title: Seznameni1AC
+position: -94,-154
+---
+
+-> Left: Taky miluju Adorna!
+-> Left: Příště cituj!
+
+Right: Hele, bílý chlapy už možná... Ne?
+
+<<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+
+
+
+title: Seznameni1B
+position: -307,8
+---
+
+Left: No, stejně mě těší, i když teď trochu nevím, co...
+Right: ...
+Right: Já nevím, ja se na vernisážích vždycky nějak nudím
+Right: A málokdy chodím na vernisáže sama
+Right: Je normální být ještě po tolika letech nervózní z tý stejný party lidí, co člověk potká na každý vernisáži?
+
+-> Left: Víno zdarma je ale neodolatelné, ne?
+    <<jump Seznameni1BA>>
+-> Left: Ten sociální kapitál přece někde nabrat musíš
+    <<jump Seznameni1BB>>
+-> Left: Přece Ti nestačí koukat na umění na Artyčoku
+    <<jump Seznameni1BC>>
+
+===
+
+title: Seznameni1BA
+position: -97,-51
+---
+
+-> Right: Sakra, do poslední grantu se mi nevešlo.
+-> Right: Mám radši sušší.
+-> Right: Na zdraví!
+
+Left: Myslíš, že je to to s klokanem nebo s motýlem?
+Right: Vidím, že je tady někdo fajnšmekr! Upřímně, těžko říct...
+Right: Mě na něm chutná ta cena
+Left: Tady se za něj platí?
+
+-> Right: Je to dobrovolnej příspěvek. Ochutnej a zjistíš, jak moc dobré vůle v sobě máš...
+    Left: Tak třeba támhleten pán vypadá, že sice moc dobré vůle nemá, zato má už hodně skvělou náladu
+    -> Right: Ježiši... Vždyť se ještě ani nezahajovalo a ten už sotva sedí
+        Flavor: *oba mlčky pozorují vrávorajícího muže*
+        -> Left: *počká, až podnapilý muž udělá něco zábavného, čemu by se mohli společně zasmát*
+            Right: ...
+            Left: ...
+            Right: ...
+            Left: ...
+            Flavor: *muž nic zábavného neudělá*
+            Right: Nevim, nějak mi to začíná připadat dost smutný
+            <<scene "situaci přeruší zahájení výstavy">>
+        -> Left: Nevim, nějak mi to začíná připadat dost smutný
+            <<scene "situaci přeruší zahájení výstavy">>
+    -> Right: To je trochu nízký, ne? Hlavně, že jste v tom artu všichni děsný levičáci  se sociálním cítěním.
+        Right: A bez holubích letek by Vám na ty výstavy stejně nikdo nechodil.
+        Left: Vám? Na Tvejch výstavách je předpokládám veganský pad thai a voda...
+        -> Right: Tak na tohle nemám. Já jdu ven.
+            <<scene "jdou ven před galerii">>
+            Left: Kouříš?
+            Right: Ne
+            -> Left: Já taky ne
+            -> Left: Já jo
+            Right: Hm...
+        -> Right: Nezapomeň na vonné svíčky a mátový čaj
+            Left: Na máťák letky nechoděj?
+            Right: Ne
+-> Right: Je zadarmo
+    Left: Tak to bude krabicák
+    Right: V týhle noblesní skleničce to stejně nepoznáš
+    Left: Noblesu bychom zrovna my dva mohli i vyučovat
+
+    -> Right: To jsem oblečenej fakt tak nevhodně?
+    -> Right: *nervózně zkontroluje svoje oblečení*
+
+    <<jump Seznameni1BA_1>>
+
+<<jump End>>
+===
+
+title: Seznameni1BA_1
+position: 147,-127
+---
+-> Left: Vzory nejsou moc artist uniforma, no...
+-> Left: Jednobarevný oblečení neni moc artist uniforma, no...
+-> Left: Takovýhle boty nejsou moc artist uniforma, no...
+
+<<jump Seznameni1BA_2>>
+
+===
+
+title: Seznameni1BA_2
+position: 342,-175
+---
+-> Right: Ty mi o tom něco říkej
+    Left: Však řikám, že oba dva vypadáme mimo
+    Right: Teďka už to nemůžu odvidět. Pojd radši ven.
+    <<scene "jdou ven před galerii">>
+    Right: Kouříš?
+    -> Left: Ne
+        Right: Já taky ne
+        Left: Aha...? Tak jdeme zase dovnitř?
+        -> Right: Radši ne
+        -> Right: Nevim, ale akorát zahajujou, tak si našich trapnejch hadrů možná nikdo nevšimne
+    -> Left: Příležitostně
+        Right: Je tohle příležitost?
+        -> Left: Si zas tak nefandi
+        -> Left: *zapálí si*
+-> Right: Asi už stárnu
+
+<<jump End>>
+===
+title: Seznameni1BB
+position: -93,20
+---
+
+-> Right: Na to mám TikTok...btw 10 tisíc followers...
+    Left: Možná už tušim, co lidi znervózňuje
+-> Right: Lepší je výstavy dělat, než na ně chodit..
+    Left: Ty taky vystavuješ? Nebo jen řikáš art handlerům kam má jít kterej obraz?
+-> Right: Už jsi viděl fotografa? Abysme si kdyžtak stoupli líp...
+    Left: Tak Tobě o sociálním kapitálu očividně nic řikat nemusim.
+
+Right: Nojo, stojíš tu holt s celebritou
+
+-> Left: A jakou...
+    Right: Tak se taky pochlub, co tady děláš Ty? Na vernisáže chodí jenom art world a holubí letky. 
+    Right: A vzhledem k tomu, že v ruce nedržíš 4 skleničky vína najednou...
+    Left: To je můj plán na stáří
+    Right: To je ze strategického plánu ministerstva kultury pro rok 2023?
+    Left: Nebo důchodová reforma
+    -> Right: *Zasměje se*
+    -> Right: *Nezasměje se*
+    Left: Ne, teď vážně. Fakt bych Tě měl znát a je trapný, že vůbec netušim?
+    Left: Nebo máš vystavenýho něco tady?
+    Right: Vidíš? Už Tě to znervózňuje!
+    Left: Tak schválně...
+    <<scene "situaci přeruší zahájení výstavy">>
+-> Left: A jakou?
+    Right: Vážně Tě to zajímá nebo se ptáš jen proto, že jsi na vernisáži a je to ta první zdvořilá otázka, co Tě napadla?
+    <<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+
+title: Seznameni1BC
+position: -94,78
+---
+
+-> Right: Je pravda, že co se Tzvetnik zkazil, musím zas do galerií.
+    Left: A nebo ty výstavy radši dělat, než na ně chodit...
+    Right: Je umění po finanční krizi vůběc ještě možné?
+
+    -> Left: Jestli je to odkaz na něco, tak se asi nechytám...
+        Right: To je možná dobře
+        Right: Víš, že byl taky teplej?
+        -> Left: Taky?
+            <<jump Seznameni1BCA>>
+        -> Left: Těžko říct, furt nevím o kom mluvíš.
+            <<jump Seznameni1BCB>>
+    -> Left: Ježiš Adorno...?
+        Right: Víš, že byl taky teplej?
+        -> Left: Taky?
+            <<jump Seznameni1BCA>>
+        -> Left: "Teplej"?
+            <<jump Seznameni1BCB>>
+-> Right: Docela stačí...
+    Left: Tak lidem, co dělají NFT to asi tak nepřijde, co?
+    Left: Ne, promoiň, to nemělo být myšlený nijak zle.
+    Right: Tak já nejsem z těch, co by tvrdili, že je to budoucnost umění
+    Left: Tak mě by asi nenapadlo, že jsi crypto bro, nebo...
+    Left: Sorry, jakoby vlastně nevim, žejo, jak to jako máš
+    Right: Jak to myslíš?
+    Left: Prostě chci říct, že je někdy lepší se zeptat, nevim, prostě, ADD mozek, neptej se
+    Left: Sorry, řikám blbosti, fakt nevim. Možná je to tím vzduchem, nebo těma lidma...?
+    Right: Ok, asi nechápu, ale tak nechceš jít na vzduch?
+    Left: Ty seš taková citlivá duše, viď? To je hrozně hezký.
+    <<scene "jdou ven před galerii">>
+    Left: Doufám, že jsem neřekla něco špatně...?
+    Left: Kouříš?
+    Right: Příležitostně
+    Left: Je tohle příležitost?
+    -> Right: ...
+        Left: Hele, akorát zahajujou...
+        Left: Chceš si to poslechnout?
+        -> Right: *zapálí si*
+        -> Right: *mlčky zůstane stát před galerií*
+    -> Right: *zapálí si*
+-> Right: Je pravda, že pak ta jemná textura epoxidu nevynikne.
+    Left: Uff, epoxid mems už jsou trochu over, ne?
+    Right: Jak to myslíš?
+    Left: No jakože už je to trochu starý.
+    Left: Delegitimizovat celou jednu techniku jen proto, že s tim lidi dělaj hnusný věci na TikToku je docela nefér.
+    Left: Ty zas nevyhnutelně vytáhneš v nějakej moment Adorna a taky nebudu nadávat, že všichni bílý chlapy se nedaj číst...
+    Right: ...
+    Left: ...
+    Right: Ty děláš s epoxidem, žejo?
+    Left: A všichni bílý chlapy se fakt nedaj číst, a co jako?!
+    <<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+
+title: Seznameni1BCA
+position: 152,40
+---
+Right: Sorry, jakoby vlastně nevim, žejo...
+Left: Jak to myslíš?
+Right: Jakože máš pravdu, že je někdy lepší se zeptat.
+Left: Já jsem nic takovýho neříkala
+Right: Tohle je teď trochu trapný
+
+-> Left: To je v pohodě... 
+-> Left: ...
+
+Right: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí, který by je z této situace vyprostil*
+
+-> Left: *pasivně agresivně udržuje oční kontakt*
+-> Left: *jakoby najednou zasaženi krásou díla před sebou ho začne pozorovat ve snaze najít v něm nové téma, které by je z trapné situace vyprostilo*
+
+<<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+
+title: Seznameni1BCB
+position: 138,96
+---
+Right: No Adorno, že byl teplej
+
+-> Left: Neptala jsem se na obsah, ale na to slovo
+-> Left: Nerad bourám vzdušný zámky, ale skoro určitě ne.
+
+Right: Sorry, jakoby vlastně nevim, žejo... Jsem tak nějak předpokládala...
+Left: Od kud tu informaci prosimtě máš? Nějaký speciální vydání 100+1 s podtitulem "Skandál ve Frankfurtu"?
+Left: Nebo fakt existuje nějakej bulvární plátek o dávno mrtvejch filosofech?
+
+-> Right: Jojo, řiká se tomu diskurz
+-> Right: Jojo, řiká se mu e-flux
+-> Right: Jojo, řiká se mu avu_core
+
+<<jump Seznameni1BCB_1>>
+
+
+===
+
+title: Seznameni1BCB_1
+position: 360,81
+---
+-> Left: *Zasměje se*
+    Right: Ale notak... Zas tak vtipný to nebylo
+    <<scene "situaci přeruší zahájení výstavy">>
+-> Left: *Nezasměje se*
+    Right: Ale notak... To by náhodou docela vtipný
+    Right: Já jsem Tě urazil, žejo?
+    Left: Já jdu ven
+    Right: Já jdu s Tebou
+    <<scene "jdou ven před galerii">>
+    Right: Urazila jsem Tě s tim Adornem nebo tim rejpnutí do plátků o mrtvejch filosofech?
+    Left: Kouříš?
+    -> Right: Příležitostně
+        Left: Je tohle příležitost?
+    -> Right: Ne
+        Left: Tak se potkáme vevnitř
+
+<<jump End>>
+
+===
+
+title: Seznameni1C
+position: -320,175
+---
+
+-> Right: Tak Nedoma, ne?
+-> Right: Tak znáš se s Thérem, ne?
+-> Right: Seš naprsto jasnej
+
+Left: Co mě prozradilo?
+
+-> Left: Flash art v tašce?
+-> Left: Fotky z Modelu?
+-> Left: Tričko národní galerie?
+
+<<jump Seznameni1C_1>>
+ 
+===
+
+title: Seznameni1C_1
+position: -89,225
+---
+-> Right: Sleduju tvůj Instagram. Máš super styl storíček.
+    <<jump Seznameni1CA>>
+-> Right: Tvoje oči. Vypadáš jako někdo, kdo se v umění vyzná.
+    <<jump Seznameni1CB>>
+-> Right: Ve skutečnosti mi o tobě říkali. 
+    <<jump Seznameni1CB>>
+
+===
+
+title: Seznameni1CA
+position: 148,173
+---
+
+Left: No, mám TikTok...btw 10 tisíc followers...
+Right: Jo, to jsem  měl na mysli...
+Left: ...
+Left: Kolik Ti je, mimochodem?
+
+-> Right: Mimochodem?
+-> Right: Momentálně si připadám dost staře.
+
+Left: Dobře, uznávám, že je to možná zbytečnej roast. 
+Right: ...
+Left: Momentálně to vypadá, že spíš znervózňuju já Tebe.
+Right: Co?
+Left: U vchodu jsi řikala něco o tom, jak to každýho znervózňuje, ač teda furt nevim co.
+
+-> Right: Jo, pravda. Už to tak vypadá, no. Vedeš 1:0.
+    Left: Zkusíš dorovnat?
+    Right: Si zas tak nefandi
+-> Right: Role se prohodily. Věčný téma.
+    Left: Jakože Ty o tom něco víš
+    Right: No! A znervózňuje Tě to teda?
+    Left: Si zas tak nefandi
+
+<<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+
+title: Seznameni1CB
+position: 167,270
+---
+
+-> Left: Creepy.
+-> Left: ...
+-> Left: To doufám.
+
+<<jump Seznameni1CB_1>>
+
+===
+
+title: Seznameni1CB_1
+position: 400,272
+---
+-> Right: To byla snaha o flirt.
+-> Right: To byla snaha o ice breaker
+
+Left: Aha
+Right: ...
+Left: ...
+Right: ...
+Left: ...
+Right: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí, který by je z této situace vyprostil*
+
+-> Left: *pasivně agresivně udržuje oční kontakt*
+-> Left: *jakoby najednou zasaženi krásou díla před sebou ho začne pozorovat ve snaze najít v díle nové téma, které by je z trapné situace vyprostilo*
+
+<<scene "situaci přeruší zahájení výstavy">>
+
+<<jump End>>
+
+===
+
+
+title: End
+position: 801,-186
+---
+
+===

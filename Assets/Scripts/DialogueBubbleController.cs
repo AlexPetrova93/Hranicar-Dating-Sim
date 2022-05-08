@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class DialogueBubbleController : MonoBehaviour
 
     [SerializeField] private Sprite bubbleLeft;
     [SerializeField] private Sprite bubbleRight;
+    [SerializeField] private Sprite bubbleFlavor;
 
     [SerializeField] private Image bubbleGraphic;
     [SerializeField] private VerticalLayoutGroup thisLayoutGroup;
@@ -55,16 +57,50 @@ public class DialogueBubbleController : MonoBehaviour
                 );
 
                 break;
+            case EPlayer.Flavor:
+                // bubble sprite
+                bubbleGraphic.sprite = bubbleFlavor;
+
+                // anchor middle
+                thisLayoutGroup.childAlignment = TextAnchor.LowerCenter;
+
+                // padding middle
+                childLayoutGroup.padding = new RectOffset(
+                    Utility.bubbleTextPaddingDefault,
+                    Utility.bubbleTextPaddingDefault,
+                    Utility.bubbleTextPaddingDefault,
+                    Utility.bubbleTextPaddingDefault
+                );
+                break;
         }
     }
 
     public void Fade()
     {        
-        canvasGroup.alpha = .5f;
+        //canvasGroup.alpha = .5f;
     }
 
     public void Destroy()
     {
         Destroy(gameObject);
+        //StartCoroutine(DestroyInternal());
+    }
+
+    private IEnumerator DestroyInternal()
+    {
+        float inc = .05f;
+
+        for (float i = 1; i > 0; i -= inc)
+        {
+            yield return new WaitForSeconds(inc);
+            canvasGroup.alpha = i;
+        }
+
+        canvasGroup.alpha = 0;
+
+        Destroy(gameObject);
+
+        yield return null;
+
     }
 }

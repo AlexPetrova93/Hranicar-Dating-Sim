@@ -17,22 +17,49 @@ title: Node1A
 position: 0,100
 ---
 Right: This is right player option A!
+Flavor: *something hapens*
 
 -> Right: Gosh!
 -> Right: Incredible!
 -> Right: I'm amazed!
 
+<<jump Node1AA>>
+
 Left: Anyway, time to get writing!
+
+<<scene "this is it !">>
 
 ===
 title: Node1B
 position: 0,200
 ---
 Right: This is right player option B!
+Flavor: *something else hapens*
 
 -> Right: Gosh!
 -> Right: Incredible!
 -> Right: I'm amazed!
 
 Left: Anyway, time to get writing!
+===
+
+title: Node1AA
+position: 0,200
+---
+-> Left: LeftGosh!
+-> Left: LeftIncredible!
+-> Left: LeftI'm amazed!
+
+<<jump Node1AAA>>
+
+===
+
+
+title: Node1AAA
+position: 0,200
+---
+-> Right: RightGosh!
+-> Right: RightIncredible!
+-> Right: RightI'm amazed!
+
 ===

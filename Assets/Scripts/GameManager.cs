@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         if (currentScene == Utility.mainLevelBuildIndex && levelManager)
         {
-            levelManager.SetRandomBackground();
-            levelManager.SetCharacterSprites(
+            levelManager.Init(
+                this,
                 characterSprites[charactersChosen[EPlayer.Left]],
                 characterSprites[charactersChosen[EPlayer.Right]]
             );
@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
     {
         blackScreen.FadeOut();
         //LoadNextScene();
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoadNextScene()

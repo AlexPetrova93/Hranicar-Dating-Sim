@@ -1,0 +1,38 @@
+﻿title: Start2
+position: -250,150
+---
+Left: Hello, this is left player from test 2!
+Left: Hello, this is left player again!
+Right: Hello, this is right player!
+Right: Hello, this is right player again!
+
+-> Left: Option A
+    <<jump Node1A>>
+-> Left: Option B
+    <<jump Node1B>>
+
+
+===
+title: Node2A
+position: 0,100
+---
+Right: This is right player option A!
+
+-> Right: Gosh!
+-> Right: Incredible!
+-> Right: I'm amazed!
+
+Left: Anyway, time to get writing!
+
+===
+title: Node2B
+position: 0,200
+---
+Right: This is right player option B!
+
+-> Right: Gosh!
+-> Right: Incredible!
+-> Right: I'm amazed!
+
+Left: Anyway, time to get writing!
+===

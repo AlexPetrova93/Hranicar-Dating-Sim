@@ -20,7 +20,7 @@ public class MyDialogueView : DialogueViewBase
         // call this on confirm ! - keep track of which player is currently in control !
         if (Input.GetButtonDown(playerInControl.Confirm()))
         {
-            Debug.Log("Player pressing confirm");
+            Debug.Log("Player " + playerInControl + " pressing confirm");
             onDialogueLineFinished?.Invoke();
         }
     }
@@ -83,11 +83,11 @@ public class MyDialogueView : DialogueViewBase
 
     private void PushBubble()
     {
-        currentBubble.Fade();
+        currentBubble.Destroy();
         if (previousBubble) previousBubble.Destroy();
         previousBubble = currentBubble;
     }
-
+    
     public override void DialogueComplete()
     {
         if (currentBubble) currentBubble.Destroy();

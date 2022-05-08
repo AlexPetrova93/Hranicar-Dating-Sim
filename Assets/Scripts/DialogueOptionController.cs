@@ -83,6 +83,17 @@ public class DialogueOptionController : DialogueBubbleController
     {
         myDialogueOptions[curSelection].Confirm();
 
+        // remove the other options
+        List<MyDialogueOption> optionsToRemove = new List<MyDialogueOption>();
+        for (int i = 0; i < myDialogueOptions.Count; i++)
+        {
+            if (i != curSelection) optionsToRemove.Add(myDialogueOptions[i]);
+        }
+        foreach (MyDialogueOption option in optionsToRemove)
+        {
+            Destroy(option.gameObject);
+        }
+
         // order matters !
         onSelectionComplete?.Invoke();
         onOptionSelected?.Invoke(myDialogueOptions[curSelection].GetOptionID());
