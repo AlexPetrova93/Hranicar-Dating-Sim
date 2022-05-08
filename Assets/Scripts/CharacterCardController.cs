@@ -9,7 +9,7 @@ public class CharacterCardController : MonoBehaviour
     [SerializeField] private EPlayer player;
 
     [SerializeField] private Image card;
-    [SerializeField] private Sprite[] cardSprites;
+    private Sprite[] cardSprites;
 
     private CharacterIcon[] icons;
 
@@ -19,9 +19,10 @@ public class CharacterCardController : MonoBehaviour
 
     [HideInInspector] public UnityEvent<EPlayer, bool, int> confirmationChange;
 
-
     private void Start()
     {
+        cardSprites = FindObjectOfType<GameManager>().characterSprites;
+
         curSelection = 0;
         card.sprite = cardSprites[curSelection];
 
@@ -38,14 +39,18 @@ public class CharacterCardController : MonoBehaviour
             ConfirmSelection();
         }
 
-        if (Input.GetAxis(player.Horizontal()) != 0)
+        if (Input.GetAxis(player.Horizontal()) < 0)
         {
-            MoveSelection();
+            MoveSelection(-1);
+        }
+        else if (Input.GetAxis(player.Horizontal()) > 0)
+        {
+            MoveSelection(1);
         }
 
     }
 
-    public void MoveSelection()
+    private void MoveSelection(int increment)
     {
         // check time
         if (Time.time - lastMoved < Utility.axisDelta) return;
@@ -56,7 +61,7 @@ public class CharacterCardController : MonoBehaviour
         Confirm(false);
 
         // increment current selection
-        curSelection = (++curSelection) % Utility.numCharacterChoices;
+        curSelection = curSelection.MoveIndex(increment, Utility.numCharacterChoices);
 
         // change character card sprite
         card.sprite = cardSprites[curSelection];
@@ -66,7 +71,7 @@ public class CharacterCardController : MonoBehaviour
     }
 
 
-    public void ConfirmSelection()
+    private void ConfirmSelection()
     {
         Confirm(true);
         // confirm icon

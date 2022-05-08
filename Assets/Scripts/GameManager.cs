@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Sprite[] characterSprites;
+    public Sprite[] characterSprites;
     private Dictionary<EPlayer, int> charactersChosen;
 
     private BlackScreenController blackScreen;
@@ -27,14 +26,23 @@ public class GameManager : MonoBehaviour
         blackScreen = FindObjectOfType<BlackScreenController>();
         blackScreen.fadeOutEnd.AddListener(LoadNextScene);
 
-        currentScene = SceneManager.GetActiveScene().buildIndex;
+        currentScene = 0;
 
-        if (currentScene == 1)
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("running init");
+
+        blackScreen.FadeIn();
+
+        levelManager = FindObjectOfType<LevelManager>();
+        if (currentScene == Utility.mainLevelBuildIndex && levelManager)
         {
-            levelManager = FindObjectOfType<LevelManager>();
             levelManager.SetRandomBackground();
             levelManager.SetCharacterSprites(
-                characterSprites[charactersChosen[EPlayer.Left]], 
+                characterSprites[charactersChosen[EPlayer.Left]],
                 characterSprites[charactersChosen[EPlayer.Right]]
             );
         }
@@ -48,6 +56,7 @@ public class GameManager : MonoBehaviour
     public void NextScene() 
     {
         blackScreen.FadeOut();
+        //LoadNextScene();
     }
 
     private void LoadNextScene()

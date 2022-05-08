@@ -18,6 +18,7 @@ public class BlackScreenController : MonoBehaviour
     {
         animator.SetTrigger("FadeIn");
     }
+
     public void FadeOut()
     {
         animator.SetTrigger("FadeOut");
@@ -27,5 +28,10 @@ public class BlackScreenController : MonoBehaviour
     {
         Debug.Log("ending fade out");
         fadeOutEnd.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        fadeOutEnd.RemoveAllListeners();
     }
 }

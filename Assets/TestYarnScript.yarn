@@ -1,22 +1,38 @@
-﻿title: Left_1
+﻿title: Start
+position: -250,150
 ---
-This is left player!
+Left: Hello, this is left player!
+Left: Hello, this is left player 2!
+Right: Hello, this is right player!
+Right: Hello, this is right player 2!
 
--> Gosh!
--> Incredible!
--> I'm amazed!
+-> Left: Option A
+    <<jump Node1A>>
+-> Left: Option B
+    <<jump Node1B>>
 
-Anyway, time to get writing!
+
 ===
-title: Righ_1
+title: Node1A
 position: 0,100
 ---
-This is right player!
+Right: This is right player option A!
 
--> Gosh!
--> Incredible!
--> I'm amazed!
+-> Right: Gosh!
+-> Right: Incredible!
+-> Right: I'm amazed!
 
-Anyway, time to get writing!
+Left: Anyway, time to get writing!
 
+===
+title: Node1B
+position: 0,200
+---
+Right: This is right player option B!
+
+-> Right: Gosh!
+-> Right: Incredible!
+-> Right: I'm amazed!
+
+Left: Anyway, time to get writing!
 ===

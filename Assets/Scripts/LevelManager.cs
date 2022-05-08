@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetCharacterSprites(Sprite left, Sprite right)
     {
+        Debug.Log("setting sprites");
         characterLeftRenderer.sprite = left;
         characterRightRenderer.sprite = right;
     }

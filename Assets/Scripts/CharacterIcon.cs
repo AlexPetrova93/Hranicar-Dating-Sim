@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class CharacterIcon : MonoBehaviour
 {
     private Image targetGraphic;
 
     private Sprite defaultIcon;
-    [SerializeField] private Sprite selected;
-    [SerializeField] private Sprite confirmed;
+    [SerializeField] private Sprite selectedIcon;
+    [SerializeField] private Sprite confirmedIcon;
 
     private void Start()
     {
@@ -19,7 +18,7 @@ public class CharacterIcon : MonoBehaviour
 
     public void Select()
     {
-        targetGraphic.sprite = selected;
+        targetGraphic.sprite = selectedIcon;
     }
 
     public void Deselect()
@@ -29,7 +28,7 @@ public class CharacterIcon : MonoBehaviour
 
     public void Confirm()
     {
-        targetGraphic.sprite = confirmed;
+        targetGraphic.sprite = confirmedIcon;
     }
 
 }
