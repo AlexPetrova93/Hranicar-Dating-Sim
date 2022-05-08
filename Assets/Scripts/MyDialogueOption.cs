@@ -10,14 +10,14 @@ public class MyDialogueOption : MonoBehaviour
 
     private TextMeshProUGUI optionText;
 
-    void Start()
+    private int dialogueOptionID;
+
+    public void Init(int dialogueOptionID, string text)
     {
         optionText = GetComponent<TextMeshProUGUI>();
         defaultColor = optionText.color;
-    }
 
-    public void SetText(string text)
-    {
+        this.dialogueOptionID = dialogueOptionID;
         optionText.text = text;
     }
 
@@ -35,4 +35,7 @@ public class MyDialogueOption : MonoBehaviour
     {
         optionText.color = confirmedColor;
     }
+
+    public int GetOptionID() => dialogueOptionID;
+
 }

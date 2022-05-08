@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class DialogueOptionController : DialogueBubbleController
@@ -11,41 +13,49 @@ public class DialogueOptionController : DialogueBubbleController
     private float lastMoved;
     private int curSelection;
 
+    private Action<int> onOptionSelected;
+    private Action onSelectionComplete;
+
     private bool optionsActive;
 
-    private void Start()
-    {
-        lastMoved = 0;
-        curSelection = 0;
-        optionsActive = false;
-    }
-
-    public void Init(DialogueOption[] dialogueOptions, EPlayer player)
+    public void Init(EPlayer player, DialogueOption[] dialogueOptions, Action<int> onOptionSelected, Action onSelectionComplete)
     {
         Init(player);
+
+        myDialogueOptions = new List<MyDialogueOption>();
         foreach (var option in dialogueOptions)
         {
             MyDialogueOption myOption = Instantiate(dialogueOptionPrefab);
-            myOption.SetText(option.Line.Text.Text);
+            myOption.transform.SetParent(transform, false);
+            myOption.Init(option.DialogueOptionID, option.Line.TextWithoutCharacterName.Text);
             myDialogueOptions.Add(myOption);
         }
+
+        this.onOptionSelected = onOptionSelected;
+        this.onSelectionComplete = onSelectionComplete;
+
+        lastMoved = 0;
+        curSelection = 0;
+
+        myDialogueOptions[curSelection].Select();
+
         optionsActive = true;
     }
 
-    void Update()
+    private void Update()
     {
         if (!optionsActive) return;
 
         if (Input.GetButtonDown(player.Confirm()))
         {
-            //ConfirmSelection();
+            ConfirmSelection();
         }
 
-        if (Input.GetAxis(player.Horizontal()) < 0)
+        if (Input.GetAxis(player.Vertical()) < 0)
         {
             MoveSelection(-1);
         }
-        else if (Input.GetAxis(player.Horizontal()) > 0)
+        else if (Input.GetAxis(player.Vertical()) > 0)
         {
             MoveSelection(1);
         }
@@ -65,5 +75,18 @@ public class DialogueOptionController : DialogueBubbleController
 
         // select the next option
         myDialogueOptions[curSelection].Select();
+    }
+
+    private void ConfirmSelection()
+    {
+        myDialogueOptions[curSelection].Confirm();
+
+        // order matters !
+        onSelectionComplete?.Invoke();
+        onOptionSelected?.Invoke(myDialogueOptions[curSelection].GetOptionID());
+
+        optionsActive = false;
+
+        onOptionSelected = null;
     }
 }

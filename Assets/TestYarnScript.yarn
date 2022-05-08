@@ -2,9 +2,9 @@
 position: -250,150
 ---
 Left: Hello, this is left player!
-Left: Hello, this is left player 2!
+Left: Hello, this is left player again!
 Right: Hello, this is right player!
-Right: Hello, this is right player 2!
+Right: Hello, this is right player again!
 
 -> Left: Option A
     <<jump Node1A>>

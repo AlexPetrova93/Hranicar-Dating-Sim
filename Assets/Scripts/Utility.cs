@@ -9,6 +9,11 @@ public static class Utility
     public static float axisDelta = .3f;
 
     public static int numDialogueOptions = 3;
+
+    // dialogue gfx layout
+    public static int bubbleTextPaddingDefault = 20;
+    public static int bubbleTextPaddingSide = 50;
+
 }
 
 public static class Extensions
