@@ -8,6 +8,8 @@ public class DialogueOptionController : DialogueBubbleController
 {
     [SerializeField] private MyDialogueOption dialogueOptionPrefab;
 
+    [SerializeField] private RectTransform optionsParent;
+
     private List<MyDialogueOption> myDialogueOptions;
 
     private float lastMoved;
@@ -26,7 +28,7 @@ public class DialogueOptionController : DialogueBubbleController
         foreach (var option in dialogueOptions)
         {
             MyDialogueOption myOption = Instantiate(dialogueOptionPrefab);
-            myOption.transform.SetParent(transform, false);
+            myOption.transform.SetParent(optionsParent, false);
             myOption.Init(option.DialogueOptionID, option.Line.TextWithoutCharacterName.Text);
             myDialogueOptions.Add(myOption);
         }

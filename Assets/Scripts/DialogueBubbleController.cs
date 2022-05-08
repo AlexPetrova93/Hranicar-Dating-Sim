@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Yarn.Unity;
 
-[RequireComponent(typeof(Image), typeof(CanvasGroup))]
+[RequireComponent(typeof(CanvasGroup))]
 public class DialogueBubbleController : MonoBehaviour
 {
     protected EPlayer player;
@@ -10,51 +9,51 @@ public class DialogueBubbleController : MonoBehaviour
     [SerializeField] private Sprite bubbleLeft;
     [SerializeField] private Sprite bubbleRight;
 
-    private Image bubbleGraphic;
+    [SerializeField] private Image bubbleGraphic;
+    [SerializeField] private VerticalLayoutGroup thisLayoutGroup;
+    [SerializeField] private VerticalLayoutGroup childLayoutGroup;
 
     private CanvasGroup canvasGroup;
 
     public void Init(EPlayer player)
     {
-        bubbleGraphic = GetComponent<Image>();
         canvasGroup = GetComponent<CanvasGroup>();
 
         this.player = player;
-        bubbleGraphic.sprite = player == EPlayer.Left ? bubbleLeft : bubbleRight;
-
-        SetUpLayout();
-    }
-
-    private void SetUpLayout()
-    {
-        VerticalLayoutGroup verticalGroup = GetComponent<VerticalLayoutGroup>();
-        RectTransform rectTransform = GetComponent<RectTransform>();
 
         switch (player)
         {
             case EPlayer.Left:
-                verticalGroup.childAlignment = TextAnchor.MiddleLeft;
-                verticalGroup.padding = new RectOffset(
+                // bubble sprite
+                bubbleGraphic.sprite = bubbleLeft;
+
+                // anchor left
+                thisLayoutGroup.childAlignment = TextAnchor.LowerLeft;
+
+                // padding left
+                childLayoutGroup.padding = new RectOffset(
                     Utility.bubbleTextPaddingSide,
                     Utility.bubbleTextPaddingDefault,
                     Utility.bubbleTextPaddingDefault,
                     Utility.bubbleTextPaddingDefault
                 );
 
-                rectTransform.anchorMin = Vector2.zero;
-                rectTransform.anchorMax = Vector2.zero;
                 break;
             case EPlayer.Right:
-                verticalGroup.childAlignment = TextAnchor.MiddleRight;
-                verticalGroup.padding = new RectOffset(
+                // bubble sprite
+                bubbleGraphic.sprite = bubbleRight;
+
+                // anchor right
+                thisLayoutGroup.childAlignment = TextAnchor.LowerRight;
+
+                // padding right
+                childLayoutGroup.padding = new RectOffset(
                     Utility.bubbleTextPaddingDefault,
                     Utility.bubbleTextPaddingSide,
                     Utility.bubbleTextPaddingDefault,
                     Utility.bubbleTextPaddingDefault
                 );
 
-                rectTransform.anchorMin = new Vector2(1, 0);
-                rectTransform.anchorMax = new Vector2(1, 0);
                 break;
         }
     }
