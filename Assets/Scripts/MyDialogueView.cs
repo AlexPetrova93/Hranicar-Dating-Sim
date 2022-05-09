@@ -15,10 +15,17 @@ public class MyDialogueView : DialogueViewBase
 
     private Action onDialogueLineFinished;
 
+    private GameManager gameManager;
+
+    public override void DialogueStarted()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
     private void Update()
     {
         // call this on confirm ! - keep track of which player is currently in control !
-        if (Input.GetButtonDown(playerInControl.Confirm()))
+        if (gameManager.PlayersInControl && Input.GetButtonDown(playerInControl.Confirm()))
         {
             Debug.Log("Player " + playerInControl + " pressing confirm");
             onDialogueLineFinished?.Invoke();

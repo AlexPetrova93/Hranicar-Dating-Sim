@@ -2,7 +2,8 @@
 position: -542,8
 ---
 Left: Klasicky jdu pozdě, už to někdo zahajoval? Moc mě těší, mimochodem, pardon. 
-Right: *jemný oční kontakt* To je v pohodě, ono to znervozňuje plno lidí. 
+Right: *jemný oční kontakt* 
+Right: To je v pohodě, ono to znervozňuje plno lidí. 
 Left: Prosím?
 
 -> Right: Asi jsem to nezmínil, ale jsem:
@@ -52,7 +53,7 @@ Left: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí,
 -> Right: *pasivně agresivně udržuje oční kontakt*
 -> Right: *jakoby najednou zasažena krásou díla před sebou ho začne pozorovat ve snaze najít v díle nové téma, které by je z trapné situace vyprostilo*
 
-<<scene "situaci přeruší zahájení výstavy">>
+<<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 
@@ -82,7 +83,7 @@ position: 113,-277
     Right: Pojď na vzduch
 -> Right: Samozřejmě
 
-<<scene "jdou ven před galerii">>
+<<scene LevelCanvas "jdou ven před galerii">>
 
 Right: Kouříš?
 
@@ -110,12 +111,12 @@ title: Seznameni1AC
 position: -94,-154
 ---
 
--> Left: Taky miluju Adorna!
--> Left: Příště cituj!
+-> Right: Taky miluju Adorna!
+-> Right: Příště cituj!
 
-Right: Hele, bílý chlapy už možná... Ne?
+Left: Hele, bílý chlapy už možná... Ne?
 
-<<scene "situaci přeruší zahájení výstavy">>
+<<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 
@@ -166,14 +167,14 @@ Left: Tady se za něj platí?
             Left: ...
             Flavor: *muž nic zábavného neudělá*
             Right: Nevim, nějak mi to začíná připadat dost smutný
-            <<scene "situaci přeruší zahájení výstavy">>
+            <<scene LevelCanvas "situaci přeruší zahájení výstavy">>
         -> Left: Nevim, nějak mi to začíná připadat dost smutný
-            <<scene "situaci přeruší zahájení výstavy">>
+            <<scene LevelCanvas "situaci přeruší zahájení výstavy">>
     -> Right: To je trochu nízký, ne? Hlavně, že jste v tom artu všichni děsný levičáci  se sociálním cítěním.
         Right: A bez holubích letek by Vám na ty výstavy stejně nikdo nechodil.
         Left: Vám? Na Tvejch výstavách je předpokládám veganský pad thai a voda...
         -> Right: Tak na tohle nemám. Já jdu ven.
-            <<scene "jdou ven před galerii">>
+            <<scene LevelCanvas "jdou ven před galerii">>
             Left: Kouříš?
             Right: Ne
             -> Left: Já taky ne
@@ -212,7 +213,7 @@ position: 342,-175
 -> Right: Ty mi o tom něco říkej
     Left: Však řikám, že oba dva vypadáme mimo
     Right: Teďka už to nemůžu odvidět. Pojd radši ven.
-    <<scene "jdou ven před galerii">>
+    <<scene LevelCanvas "jdou ven před galerii">>
     Right: Kouříš?
     -> Left: Ne
         Right: Já taky ne
@@ -252,10 +253,10 @@ Right: Nojo, stojíš tu holt s celebritou
     Left: Nebo máš vystavenýho něco tady?
     Right: Vidíš? Už Tě to znervózňuje!
     Left: Tak schválně...
-    <<scene "situaci přeruší zahájení výstavy">>
+    <<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 -> Left: A jakou?
     Right: Vážně Tě to zajímá nebo se ptáš jen proto, že jsi na vernisáži a je to ta první zdvořilá otázka, co Tě napadla?
-    <<scene "situaci přeruší zahájení výstavy">>
+    <<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 
@@ -293,7 +294,7 @@ position: -94,78
     Left: Sorry, řikám blbosti, fakt nevim. Možná je to tím vzduchem, nebo těma lidma...?
     Right: Ok, asi nechápu, ale tak nechceš jít na vzduch?
     Left: Ty seš taková citlivá duše, viď? To je hrozně hezký.
-    <<scene "jdou ven před galerii">>
+    <<scene LevelCanvas "jdou ven před galerii">>
     Left: Doufám, že jsem neřekla něco špatně...?
     Left: Kouříš?
     Right: Příležitostně
@@ -314,7 +315,7 @@ position: -94,78
     Left: ...
     Right: Ty děláš s epoxidem, žejo?
     Left: A všichni bílý chlapy se fakt nedaj číst, a co jako?!
-    <<scene "situaci přeruší zahájení výstavy">>
+    <<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 
@@ -337,7 +338,7 @@ Right: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí
 -> Left: *pasivně agresivně udržuje oční kontakt*
 -> Left: *jakoby najednou zasaženi krásou díla před sebou ho začne pozorovat ve snaze najít v něm nové téma, které by je z trapné situace vyprostilo*
 
-<<scene "situaci přeruší zahájení výstavy">>
+<<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 
@@ -369,13 +370,13 @@ position: 360,81
 ---
 -> Left: *Zasměje se*
     Right: Ale notak... Zas tak vtipný to nebylo
-    <<scene "situaci přeruší zahájení výstavy">>
+    <<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 -> Left: *Nezasměje se*
     Right: Ale notak... To by náhodou docela vtipný
     Right: Já jsem Tě urazil, žejo?
     Left: Já jdu ven
     Right: Já jdu s Tebou
-    <<scene "jdou ven před galerii">>
+    <<scene LevelCanvas "jdou ven před galerii">>
     Right: Urazila jsem Tě s tim Adornem nebo tim rejpnutí do plátků o mrtvejch filosofech?
     Left: Kouříš?
     -> Right: Příležitostně
@@ -443,7 +444,7 @@ Left: U vchodu jsi řikala něco o tom, jak to každýho znervózňuje, ač teda
     Right: No! A znervózňuje Tě to teda?
     Left: Si zas tak nefandi
 
-<<scene "situaci přeruší zahájení výstavy">>
+<<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 
@@ -477,7 +478,7 @@ Right: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí
 -> Left: *pasivně agresivně udržuje oční kontakt*
 -> Left: *jakoby najednou zasaženi krásou díla před sebou ho začne pozorovat ve snaze najít v díle nové téma, které by je z trapné situace vyprostilo*
 
-<<scene "situaci přeruší zahájení výstavy">>
+<<scene LevelCanvas "situaci přeruší zahájení výstavy">>
 
 <<jump End>>
 

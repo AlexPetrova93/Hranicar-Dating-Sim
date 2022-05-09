@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class CharacterIcon : MonoBehaviour
 {
-    private Image targetGraphic;
+    [SerializeField] private Image targetGraphic;
 
     private Sprite defaultIcon;
     [SerializeField] private Sprite selectedIcon;
@@ -12,7 +12,6 @@ public class CharacterIcon : MonoBehaviour
 
     private void Start()
     {
-        targetGraphic = GetComponent<Image>();
         defaultIcon = targetGraphic.sprite;
     }
 

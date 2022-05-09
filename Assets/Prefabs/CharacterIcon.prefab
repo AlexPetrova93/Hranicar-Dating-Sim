@@ -88,5 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8351082f023d45c4b9b3f4fd2558c0a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: {fileID: 21300000, guid: 2f885a915a677e242bac9bee4bdce08b, type: 3}
-  confirmed: {fileID: 21300000, guid: 03b985306ed10ff48b7faca3015488df, type: 3}
+  targetGraphic: {fileID: 4117556662180488892}
+  selectedIcon: {fileID: 0}
+  confirmedIcon: {fileID: 0}

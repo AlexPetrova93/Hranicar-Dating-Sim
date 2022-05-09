@@ -33,7 +33,7 @@ public class MyDialogueOption : MonoBehaviour
 
     public void Confirm()
     {
-        optionText.color = defaultColor;
+        optionText.color = confirmedColor;
     }
 
     public int GetOptionID() => dialogueOptionID;

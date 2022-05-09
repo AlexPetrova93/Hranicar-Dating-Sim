@@ -15,7 +15,10 @@ public class LevelManager : MonoBehaviour
 
     private GameManager gameManager;
 
-    private int currentSceneIndex;
+    public void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     public void Init(GameManager gameManager, Sprite left, Sprite right)
     {
@@ -28,14 +31,7 @@ public class LevelManager : MonoBehaviour
 
     public void RestartScene()
     {
-        if (!gameManager) gameManager = FindObjectOfType<GameManager>();
-
         gameManager.RestartScene();
-    }
-
-    public void StartNextScene()
-    {
-        ++currentSceneIndex;
     }
 
     private void SetRandomBackground()
@@ -44,8 +40,15 @@ public class LevelManager : MonoBehaviour
     }
 
     [YarnCommand("scene")]
-    public static void Scene(string text)
+    public void SceneChange(string text)
     {
         Debug.Log(text);
+        // fade out to black and show text
+        gameManager.PlayersInControl = false;
+    }
+
+    public void SceneChangeEnd()
+    {
+        // fade from black, hide text and resume player control
     }
 }

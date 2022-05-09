@@ -7,7 +7,9 @@ public class BlackScreenController : MonoBehaviour
 {
     private Animator animator;
 
-    [HideInInspector] public UnityEvent fadeOutEnd = new UnityEvent();
+    [HideInInspector] public UnityEvent<bool> fadeOutEnd = new UnityEvent<bool>();
+
+    private bool changeScene = false;
 
     void Start()
     {
@@ -19,15 +21,16 @@ public class BlackScreenController : MonoBehaviour
         animator.SetTrigger("FadeIn");
     }
 
-    public void FadeOut()
+    public void FadeOut(bool changeScene)
     {
+        this.changeScene = changeScene;
         animator.SetTrigger("FadeOut");
     }
 
     public void FadeOutEnd()
     {
         Debug.Log("ending fade out");
-        fadeOutEnd.Invoke();
+        fadeOutEnd.Invoke(changeScene);
     }
 
     private void OnDestroy()

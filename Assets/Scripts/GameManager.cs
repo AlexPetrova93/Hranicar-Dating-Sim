@@ -11,12 +11,17 @@ public class GameManager : MonoBehaviour
 
     private int currentScene;
 
+    private bool playersInControl;
+    public bool PlayersInControl { get => playersInControl; set => playersInControl = value; }
+
     // level
     private LevelManager levelManager;
+
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        PlayersInControl = true;
         charactersChosen = new Dictionary<EPlayer, int>() 
         {
             { EPlayer.Left, 0 },
@@ -24,7 +29,7 @@ public class GameManager : MonoBehaviour
         };
 
         blackScreen = FindObjectOfType<BlackScreenController>();
-        blackScreen.fadeOutEnd.AddListener(LoadNextScene);
+        blackScreen.fadeOutEnd.AddListener(ChangeScene);
 
         currentScene = 0;
 
@@ -55,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void NextScene() 
     {
-        blackScreen.FadeOut();
+        blackScreen.FadeOut(true);
         //LoadNextScene();
     }
 
@@ -64,11 +69,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void LoadNextScene()
+    private void ChangeScene(bool changeScene)
     {
-        ++currentScene;
-        Debug.Log("loading scene with bi " + currentScene);
-        SceneManager.LoadScene(currentScene);
+        if (changeScene)
+        {
+            ++currentScene;
+            Debug.Log("loading scene with bi " + currentScene);
+            SceneManager.LoadScene(currentScene);
+        }
+        else
+        {
+            levelManager.SceneChangeEnd();
+        }
     }
 
 }

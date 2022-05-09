@@ -20,6 +20,8 @@ public class DialogueOptionController : DialogueBubbleController
 
     private bool optionsActive;
 
+    private GameManager gameManager;
+
     public void Init(EPlayer player, DialogueOption[] dialogueOptions, Action<int> onOptionSelected, Action onSelectionComplete)
     {
         Init(player);
@@ -42,11 +44,13 @@ public class DialogueOptionController : DialogueBubbleController
         myDialogueOptions[curSelection].Select();
 
         optionsActive = true;
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
     {
-        if (!optionsActive) return;
+        if (!optionsActive || !gameManager.PlayersInControl) return;
 
         if (Input.GetButtonDown(player.Confirm()))
         {
