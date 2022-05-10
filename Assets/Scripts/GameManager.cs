@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,9 +8,7 @@ public class GameManager : MonoBehaviour
     public Sprite[] characterSprites;
     private Dictionary<EPlayer, int> charactersChosen;
 
-    private BlackScreenController blackScreen;
-
-    private int currentScene;
+    [SerializeField] private CanvasGroup blackScreen;
 
     private bool playersInControl;
     public bool PlayersInControl { get => playersInControl; set => playersInControl = value; }
@@ -28,11 +27,6 @@ public class GameManager : MonoBehaviour
             { EPlayer.Right, 0 }
         };
 
-        blackScreen = FindObjectOfType<BlackScreenController>();
-        blackScreen.fadeOutEnd.AddListener(ChangeScene);
-
-        currentScene = 0;
-
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -40,10 +34,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("running init");
 
-        blackScreen.FadeIn();
+        // fade from black
+        this.Tween<float>(
+            (from, to, t) => blackScreen.alpha = Mathf.Lerp(from, to, t),
+            1,
+            0,
+            Utility.fadeTime            
+        );
 
         levelManager = FindObjectOfType<LevelManager>();
-        if (currentScene == Utility.mainLevelBuildIndex && levelManager)
+        if (SceneManager.GetActiveScene().buildIndex == Utility.mainLevelBuildIndex && levelManager)
         {
             levelManager.Init(
                 this,
@@ -60,8 +60,14 @@ public class GameManager : MonoBehaviour
 
     public void NextScene() 
     {
-        blackScreen.FadeOut(true);
-        //LoadNextScene();
+        //fade to black then load next scene
+        this.Tween<float>(
+            (from, to, t) => blackScreen.alpha = Mathf.Lerp(from, to, t),
+            0,
+            1,
+            Utility.fadeTime,
+            LoadNextScene
+        );
     }
 
     public void RestartScene()
@@ -69,18 +75,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void ChangeScene(bool changeScene)
+    private void LoadNextScene()
     {
-        if (changeScene)
-        {
-            ++currentScene;
-            Debug.Log("loading scene with bi " + currentScene);
-            SceneManager.LoadScene(currentScene);
-        }
-        else
-        {
-            levelManager.SceneChangeEnd();
-        }
+        Debug.Log("loading scene with bi " + SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

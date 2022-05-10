@@ -11,11 +11,13 @@ public class MyDialogueView : DialogueViewBase
     private EPlayer playerInControl = EPlayer.Left;
 
     private DialogueBubbleController currentBubble;
-    private DialogueBubbleController previousBubble;
 
     private Action onDialogueLineFinished;
 
     private GameManager gameManager;
+
+    private bool currentlyWriting;
+    private bool wishesToInterrupt;
 
     public override void DialogueStarted()
     {
@@ -27,8 +29,14 @@ public class MyDialogueView : DialogueViewBase
         // call this on confirm ! - keep track of which player is currently in control !
         if (gameManager.PlayersInControl && Input.GetButtonDown(playerInControl.Confirm()))
         {
-            Debug.Log("Player " + playerInControl + " pressing confirm");
-            onDialogueLineFinished?.Invoke();
+            if (currentlyWriting)
+            {
+                wishesToInterrupt = true;
+            }
+            else
+            {
+                onDialogueLineFinished?.Invoke();
+            }
         }
     }
 
@@ -37,21 +45,39 @@ public class MyDialogueView : DialogueViewBase
         Debug.Log("Running line");
         playerInControl = dialogueLine.CharacterName.ToEPlayer();
 
-        DialogueLineController dialogueBubble = Instantiate(dialogueLinePrefab);
-        dialogueBubble.transform.SetParent(transform, false);
-        dialogueBubble.Init(playerInControl, dialogueLine.TextWithoutCharacterName.Text);
+        this.WaitThenContinue(
+            gameManager.PlayersInControl ? 0 : Utility.fadeTime,
+            () =>
+            {
+                DialogueLineController dialogueBubble = Instantiate(dialogueLinePrefab);
+                dialogueBubble.transform.SetParent(transform, false);
+                dialogueBubble.Init(playerInControl, "");
 
-        currentBubble = dialogueBubble;
+                currentBubble = dialogueBubble;
 
-        this.onDialogueLineFinished = onDialogueLineFinished;
+                this.onDialogueLineFinished = onDialogueLineFinished;
 
-        //StartCoroutine(RunLineInternal(dialogueLine));
+                StartCoroutine(WriteText(dialogueBubble, dialogueLine.TextWithoutCharacterName.Text));
+            }
+        );
     }
 
-    private IEnumerator RunLineInternal(LocalizedLine dialogueLine)
+    private IEnumerator WriteText(DialogueLineController dialogueBubble, string text)
     {
-        yield return new WaitForSeconds(2f);
+        currentlyWriting = true;
+        foreach (char letter in text)
+        {
+            if (wishesToInterrupt) break;
 
+            dialogueBubble.AddLetter(letter);
+
+            yield return new WaitForSeconds(Utility.typingTime);
+        }
+
+        dialogueBubble.SetText(text);
+
+        currentlyWriting = false;
+        wishesToInterrupt = false;
     }
 
     public override void InterruptLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
@@ -73,7 +99,6 @@ public class MyDialogueView : DialogueViewBase
         onDismissalComplete.Invoke();
     }
 
-
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
     {
         Debug.Log("Running options");
@@ -90,15 +115,12 @@ public class MyDialogueView : DialogueViewBase
 
     private void PushBubble()
     {
-        currentBubble.Destroy();
-        if (previousBubble) previousBubble.Destroy();
-        previousBubble = currentBubble;
+        if (currentBubble) currentBubble.Destroy();
     }
     
     public override void DialogueComplete()
     {
         if (currentBubble) currentBubble.Destroy();
-        if (previousBubble) previousBubble.Destroy();
     }
 
 }

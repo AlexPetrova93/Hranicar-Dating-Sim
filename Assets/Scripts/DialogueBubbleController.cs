@@ -82,8 +82,8 @@ public class DialogueBubbleController : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(gameObject);
-        //StartCoroutine(DestroyInternal());
+        //Destroy(gameObject);
+        StartCoroutine(DestroyInternal());
     }
 
     private IEnumerator DestroyInternal()

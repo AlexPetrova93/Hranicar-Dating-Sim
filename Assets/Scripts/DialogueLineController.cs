@@ -18,4 +18,9 @@ public class DialogueLineController : DialogueBubbleController
     {
         bubbleText.text = text;
     }
+
+    public void AddLetter(char letter)
+    {
+        bubbleText.text += letter;
+    }
 }
