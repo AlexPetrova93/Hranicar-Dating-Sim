@@ -1,8 +1,8 @@
 ﻿title: Start
 position: -38,-474
 ---
-<<scenery_change LevelManager "">>
-<<outro_message LevelManager "Jak se cítíte?">>
+
+Flavor: "Jak se cítíte?"
 
 -> Left: Zaujatý
 -> Left: Rozhozená
@@ -90,18 +90,18 @@ position: -13,235
 ---
 -> Right: Vděčná
 
-<<scenery_change LevelManager "">>
+<<setting_change LevelCanvas "">>
 
-<<outro_message LevelManager "Došli jste na 1 z 12 konců.
+Flavor: Došli jste na 1 z 12 konců.
 
-Klidně to zkuste znovu.
+Flavor: Klidně to zkuste znovu.
 
-Nebo spolu běžte ven.">>
+Flavor: Nebo spolu běžte ven.
 
-<<outro_message LevelManager "Díky za dohrání!
+Flavor: Díky za dohrání!
 
-No Fun kolektiv, 2022">>
+Flavor: No Fun kolektiv, 2022
 
-<<end_game LevelManager "Zpět do main menu">>
+<<end_game LevelCanvas "Zpět na začátek?">>
 
 ===

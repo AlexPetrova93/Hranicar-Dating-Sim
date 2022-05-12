@@ -1,5 +1,8 @@
 ﻿title: Start
 ---
+-> Right: Debug: Skip Galerie
+    <<jump End>>
+-> Right: Debug: Continue Galerie
 
 Right: Poslední přeživší
 Left: Vypadá to tak...
@@ -10,5 +13,5 @@ Left: Vypadá to tak...
 
 title: End
 ---
-<<end_segment LevelManager "Vernisáž končí víno došlo">>
+<<end_act LevelCanvas "Vernisáž končí víno došlo">>
 ===

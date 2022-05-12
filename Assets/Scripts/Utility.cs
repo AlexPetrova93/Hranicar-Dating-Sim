@@ -12,7 +12,7 @@ public static class Utility
     public static int numDialogueOptions = 3;
 
     public static readonly float fadeTime = 1f;
-    public static float sceneScreenStayTime = 2.5f;
+    public static float sceneScreenStayTime = 1.5f;
 
     public static float typingTime = .05f;
 

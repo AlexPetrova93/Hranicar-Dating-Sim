@@ -1,5 +1,9 @@
 ﻿title: Start
 ---
+-> Right: Debug: Skip Hospoda
+    <<jump End>>
+-> Right: Debug: Continue Hospoda
+
 Right: Tahle hodina v podnicích tohoto typu je vždycky dost zajímavá
 Left: Vypadá to tak...
 
@@ -9,5 +13,5 @@ Left: Vypadá to tak...
 
 title: End
 ---
-<<end_segment LevelManager "Hospoda zavírá">>
+<<end_act LevelCanvas "Hospoda zavírá">>
 ===

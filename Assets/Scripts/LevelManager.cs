@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
@@ -13,8 +14,17 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Sprite[] bgGallerySprites;
     [SerializeField] private Sprite[] bgStreerSprites;
     [SerializeField] private Sprite[] bgPubSprites;
+    [SerializeField] private Sprite[] bgNoiseSprites;
 
-    [SerializeField] private YarnProject[] yarnProjects;
+    [SerializeField] private YarnProject projectSeznameni;
+    [SerializeField] private YarnProject projectSexAVztahy;
+    [SerializeField] private YarnProject projectNeurotickaGalerie;
+    [SerializeField] private YarnProject projectNeurotickaHospoda;
+    [SerializeField] private YarnProject projectZaver;
+
+    private Dictionary<EAct, YarnProject> yarnProjects = null;
+    private EAct currentAct;
+
     private DialogueRunner dialogueRunner;
 
     private GameManager gameManager;
@@ -22,20 +32,50 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CanvasGroup sceneChangeCanvas;
     [SerializeField] private TMPro.TextMeshProUGUI sceneChangeText;
 
-    public void Start()
+    private bool wantsToReturnToMain = false;
+
+    private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+        SetUpYarnProjectDictionary();
+        currentAct = EAct.Seznameni;
+        //StartNextAct(EAct.Seznameni);
+    }
+
+    private void Update()
+    {
+        if (wantsToReturnToMain && Input.GetButtonDown(EPlayer.Flavor.Confirm()))
+        {
+            wantsToReturnToMain = false;
+            gameManager.ReturnToMain();
+        }
     }
 
     public void Init(GameManager gameManager, Sprite left, Sprite right)
     {
         characterLeftRenderer.sprite = left;
         characterRightRenderer.sprite = right;
-        SetRandomBackground(EScene.Gallery);
+        SetRandomBackground(ESetting.Gallery);
 
         this.gameManager = gameManager;
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+        SetUpYarnProjectDictionary();
+        //StartNextAct(EAct.Seznameni);
+    }
+
+    private void SetUpYarnProjectDictionary()
+    {
+        if (yarnProjects != null) return;
+
+        yarnProjects = new Dictionary<EAct, YarnProject>
+        {
+            { EAct.Seznameni, projectSeznameni },
+            { EAct.SexAVztahy, projectSexAVztahy },
+            { EAct.NeurotickaGalerie, projectNeurotickaGalerie },
+            { EAct.NeurotickaHospoda, projectNeurotickaHospoda },
+            { EAct.Zaver, projectZaver }
+        };
     }
 
     public void RestartScene()
@@ -43,24 +83,27 @@ public class LevelManager : MonoBehaviour
         gameManager.RestartScene();
     }
 
-    private void SetRandomBackground(EScene scene)
+    private void SetRandomBackground(ESetting setting)
     {
-        switch (scene)
+        switch (setting)
         {
-            case EScene.Gallery:
+            case ESetting.Gallery:
                 bgRenderer.sprite = bgGallerySprites[UnityEngine.Random.Range(0, bgGallerySprites.Length)];
                 break;
-            case EScene.Street:
+            case ESetting.Street:
                 bgRenderer.sprite = bgStreerSprites[UnityEngine.Random.Range(0, bgStreerSprites.Length)];
                 break;
-            case EScene.Pub:
+            case ESetting.Pub:
                 bgRenderer.sprite = bgPubSprites[UnityEngine.Random.Range(0, bgPubSprites.Length)];
+                break;
+            case ESetting.Noise:
+                bgRenderer.sprite = bgNoiseSprites[UnityEngine.Random.Range(0, bgNoiseSprites.Length)];
                 break;
         }
     }
 
-    [YarnCommand("scenery_change")]
-    public void SceneryChange(string text)
+    [YarnCommand("setting_change")]
+    public void SettingChange(string text)
     {
         Debug.Log(text);
 
@@ -71,12 +114,12 @@ public class LevelManager : MonoBehaviour
         BlackInterlude(
             Utility.fadeTime,
             Utility.sceneScreenStayTime,
-            () => SetRandomBackground(text.ToEScene())
+            whenInBlack: () => SetRandomBackground(text.ToESetting())            
         );
     }
 
-    [YarnCommand("end_segment")]
-    public void EndSegment(string text)
+    [YarnCommand("end_act")]
+    public void EndAct(string text)
     {
         Debug.Log(text);
 
@@ -87,26 +130,20 @@ public class LevelManager : MonoBehaviour
         BlackInterlude(
             Utility.fadeTime,
             Utility.sceneScreenStayTime,
-            () => 
+            whenInBlack: () => 
             {
-                SetRandomBackground(text.ToEScene());
-
-                // TODO - change yarn project to the next scene and start the dialogue again
-                dialogueRunner.SetProject(yarnProjects[0]);
-                dialogueRunner.Stop();
-                dialogueRunner.StartDialogue("Start");
-
-                //gameManager.RestartScene();
+                SetRandomBackground(text.ToESetting());
+                StartNextAct(currentAct.ToNextEAct(text.ToESetting()));
             }
         );
     }
 
-    [YarnCommand("outro_message")]
-    public void OutroMessage(string text)
+    private void StartNextAct(EAct nextAct)
     {
-        Debug.Log(text);
-
-
+        currentAct = nextAct;
+        dialogueRunner.SetProject(yarnProjects[currentAct]);
+        dialogueRunner.Stop();
+        dialogueRunner.StartDialogue("Start");
     }
 
     [YarnCommand("end_game")]
@@ -114,7 +151,20 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log(text);
 
-        // fade to black + return to main menu
+        sceneChangeText.text = text;
+
+        this.Tween<float>(
+            (from, to, t) => sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t),
+            0,
+            1,
+            Utility.fadeTime,
+            onEnd: () =>
+            {
+                // wait for confirm press
+                wantsToReturnToMain = true;
+                gameManager.PlayersInControl = true;
+            }
+        );
 
     }
 
@@ -129,7 +179,7 @@ public class LevelManager : MonoBehaviour
             0,
             1,
             fadeTime,
-            () => 
+            onEnd: () => 
             {
                 whenInBlack?.Invoke();
 
@@ -137,13 +187,13 @@ public class LevelManager : MonoBehaviour
                 this.WaitThenContinue
                 (
                     waitTime,
-                    () => {
+                    continueAction: () => {
                         this.Tween<float>(
                             (from, to, t) => sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t),
                             1,
                             0,
                             fadeTime,
-                            () => gameManager.PlayersInControl = true                            
+                            onEnd: () => gameManager.PlayersInControl = true
                         );
                     }
                 );                                  

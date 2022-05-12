@@ -58,6 +58,18 @@ public class GameManager : MonoBehaviour
         charactersChosen[player] = selection;
     }
 
+    public void ReturnToMain()
+    {
+        //fade to black then load next scene
+        this.Tween<float>(
+            (from, to, t) => blackScreen.alpha = Mathf.Lerp(from, to, t),
+            0,
+            1,
+            Utility.fadeTime,
+            LoadIntroScreen
+        );
+    }
+
     public void NextScene() 
     {
         //fade to black then load next scene
@@ -79,6 +91,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("loading scene with bi " + SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void LoadIntroScreen()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

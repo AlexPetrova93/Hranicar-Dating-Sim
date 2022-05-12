@@ -1,11 +1,23 @@
 ﻿title: Start
 ---
 
+-> Right: Debug: Skip SexAVztahy to Galerie
+    <<jump EndGallery>>
+-> Right: Debug: Skip SexAVztahy to Hospoda
+    <<jump EndPub>>
+-> Right: Debug: Continue SexAVztahy
+
+<<jump Node1>>
+
+===
+
+title: Node1
+---
+
 -> Left: Já už ten emoromantismus nedávám...
-<<jump EndPub>>
 -> Left: Někdo tak hot jako Keith Harring tady beztak chybí...
-<<jump EndPub>>
 -> Left: Mám navíc pocit, že jsem to kolem nás už někdy viděla..
+
 <<jump EndGallery>>
 
 ===
@@ -16,11 +28,11 @@
 
 title: EndGallery
 ---
-<<end_segment LevelManager "Na versnišáži zůstali už jen umělci*kyně a kurátor*ka">>
+<<end_act LevelCanvas "Na versnišáži zůstali už jen umělci*kyně a kurátor*ka">>
 ===
 
 
 title: EndPub
 ---
-<<end_segment LevelManager "Dosedli do hospody">>
+<<end_act LevelCanvas "Dosedli do hospody">>
 ===
