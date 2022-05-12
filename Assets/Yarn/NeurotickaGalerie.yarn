@@ -1,8 +1,8 @@
 ﻿title: Start
 ---
--> Right: Debug: Skip Galerie
-    <<jump End>>
--> Right: Debug: Continue Galerie
+// -> Right: Debug: Skip Galerie
+//     <<jump End>>
+// -> Right: Debug: Continue Galerie
 
 Right: Poslední přeživší
 Left: Vypadá to tak...

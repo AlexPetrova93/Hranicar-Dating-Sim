@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CanvasGroup sceneChangeCanvas;
     [SerializeField] private TMPro.TextMeshProUGUI sceneChangeText;
 
+    [SerializeField] private CanvasGroup creditsCanvas;
+
     private bool wantsToReturnToMain = false;
 
     private void Start()
@@ -147,14 +149,10 @@ public class LevelManager : MonoBehaviour
     }
 
     [YarnCommand("end_game")]
-    public void EndGame(string text)
+    public void EndGame()
     {
-        Debug.Log(text);
-
-        sceneChangeText.text = text;
-
         this.Tween<float>(
-            (from, to, t) => sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t),
+            (from, to, t) => creditsCanvas.alpha = Mathf.Lerp(from, to, t),
             0,
             1,
             Utility.fadeTime,

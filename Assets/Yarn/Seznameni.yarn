@@ -1,9 +1,9 @@
 ﻿title: Start
 position: -542,8
 ---
--> Right: Debug: Skip Seznameni
-    <<jump EndEmpty>>
--> Right: Debug: Continue Seznameni
+// -> Right: Debug: Skip Seznameni
+//    <<jump EndEmpty>>
+// -> Right: Debug: Continue Seznameni
 
 Left: Klasicky jdu pozdě, už to někdo zahajoval? Moc mě těší, mimochodem, pardon. 
 Right: *jemný oční kontakt* 
@@ -93,20 +93,24 @@ Right: Kouříš?
     Right: Já taky ne
     Left: Aha...? Tak jdeme zase dovnitř?
     -> Right: Ne
+        <<jump EndEmpty>>
     -> Right: Hele, akorát zahajujou...
         Right: Chceš si to poslechnout?
         -> Left: *zapálí si*
         -> Left: *mlčky zůstane stát před galerií*
+        <<jump EndEmpty>>
 -> Left: Příležitostně
     Right: Je tohle příležitost?
     -> Left: Si zas tak nefandi
+        <<jump EndEmpty>>
     -> Left: *zapálí si*
         Right: Hele, akorát zahajujou...
         Right: Chceš si to poslechnout?
         -> Left: *zapálí si*
         -> Left: *mlčky zůstane stát před galerií*
+        <<jump EndEmpty>>
 
-<<end_act LevelCanvas "">>
+<<jump EndEmpty>>
 
 ===
 
@@ -225,7 +229,7 @@ position: 342,-175
         Right: Je tohle příležitost?
         -> Left: Si zas tak nefandi
         -> Left: *zapálí si*
-    <<end_act LevelCanvas "">>
+    <<jump EndEmpty>>
 -> Right: Asi už stárnu
 
 <<jump End>>
@@ -382,7 +386,7 @@ position: 360,81
     -> Right: Ne
         Left: Tak se potkáme vevnitř
 
-<<end_act LevelCanvas "">>
+<<jump EndEmpty>>
 
 ===
 

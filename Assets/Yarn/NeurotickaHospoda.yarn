@@ -1,9 +1,9 @@
 ﻿title: Start
 position: -293,163
 ---
--> Right: Debug: Skip Hospoda
-    <<jump End>>
--> Right: Debug: Continue Hospoda
+// -> Right: Debug: Skip Hospoda
+//     <<jump End>>
+// -> Right: Debug: Continue Hospoda
 
 Right: Tahle hodina v podnicích tohoto typu je vždycky dost zajímavá
 Left: Vypadá to tak...

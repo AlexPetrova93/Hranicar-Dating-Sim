@@ -1,4 +1,4 @@
-﻿title: Start
+﻿title: Debug
 position: -531,93
 ---
 
@@ -8,11 +8,11 @@ position: -531,93
     <<jump EndPub>>
 -> Right: Debug: Continue SexAVztahy
 
-<<jump Node0>>
+<<jump Start>>
 
 ===
 
-title: Node0
+title: Start
 position: -203,140
 ---
 
@@ -34,7 +34,7 @@ position: -203,140
         <<jump Node1HarringB>>
 -> Left: Mám navíc pocit, že jsem to kolem nás už někdy viděla..
     -> Right: Tinder all over again
-    -> Right: Baddo all over again
+    -> Right: Badoo all over again
     -> Right: Grindr all over again
     <<jump Node1TakyNesnasim>>
 

@@ -90,18 +90,6 @@ position: -13,235
 ---
 -> Right: Vděčná
 
-<<setting_change LevelCanvas "">>
-
-Flavor: Došli jste na 1 z 12 konců.
-
-Flavor: Klidně to zkuste znovu.
-
-Flavor: Nebo spolu běžte ven.
-
-Flavor: Díky za dohrání!
-
-Flavor: No Fun kolektiv, 2022
-
-<<end_game LevelCanvas "Zpět na začátek?">>
+<<end_game LevelCanvas>>
 
 ===
