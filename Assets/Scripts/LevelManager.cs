@@ -101,12 +101,20 @@ public class LevelManager : MonoBehaviour
         );
     }
 
+    [YarnCommand("outro_message")]
+    public void OutroMessage(string text)
+    {
+        Debug.Log(text);
+
+
+    }
+
     [YarnCommand("end_game")]
     public void EndGame(string text)
     {
         Debug.Log(text);
 
-        // fade to black + return to intro screen ?
+        // fade to black + return to main menu
 
     }
 

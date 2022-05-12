@@ -1,0 +1,107 @@
+﻿title: Start
+position: -38,-474
+---
+<<scenery_change LevelManager "">>
+<<outro_message LevelManager "Jak se cítíte?">>
+
+-> Left: Zaujatý
+-> Left: Rozhozená
+-> Left: Bázlivý
+
+<<jump Zaver1>>
+===
+
+title: Zaver1
+position: -42,-400
+---
+-> Right: Nadšená
+-> Right: Stydí se
+-> Right: Jako na trní
+
+<<jump Zaver2>>
+===
+
+title: Zaver2
+position: -47,-323
+---
+-> Left: Provinilá
+-> Left: Cítí obavy
+-> Left: Hrdá
+
+<<jump Zaver3>>
+===
+
+title: Zaver3
+position: -41,-241
+---
+-> Right: Naštvaná
+-> Right: Potěšený
+-> Right: Rozhodný
+
+<<jump Zaver4>>
+===
+
+title: Zaver4
+position: -24,-165
+---
+-> Left: Ostražitá
+-> Left: Pozorná
+
+<<jump Zaver5>>
+===
+
+title: Zaver5
+position: -20,-64
+---
+-> Right: Nezaujatá
+-> Right: Soucitná
+
+<<jump Zaver6>>
+===
+
+title: Zaver6
+position: -19,22
+---
+-> Left: Vzrušený
+-> Left: Zostuzený
+
+<<jump Zaver7>>
+===
+
+title: Zaver7
+position: -16,87
+---
+-> Right: Provinilý
+-> Right: Hrdý
+
+<<jump Zaver8>>
+===
+
+title: Zaver8
+position: -13,155
+---
+-> Left: Vděčná
+
+<<jump Zaver9>>
+===
+
+title: Zaver9
+position: -13,235
+---
+-> Right: Vděčná
+
+<<scenery_change LevelManager "">>
+
+<<outro_message LevelManager "Došli jste na 1 z 12 konců.
+
+Klidně to zkuste znovu.
+
+Nebo spolu běžte ven.">>
+
+<<outro_message LevelManager "Díky za dohrání!
+
+No Fun kolektiv, 2022">>
+
+<<end_game LevelManager "Zpět do main menu">>
+
+===

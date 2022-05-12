@@ -1,0 +1,14 @@
+﻿title: Start
+---
+
+Right: Poslední přeživší
+Left: Vypadá to tak...
+
+<<jump End>>
+===
+
+
+title: End
+---
+<<end_segment LevelManager "Vernisáž končí víno došlo">>
+===

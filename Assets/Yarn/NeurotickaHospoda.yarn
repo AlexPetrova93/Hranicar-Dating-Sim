@@ -1,0 +1,13 @@
+﻿title: Start
+---
+Right: Tahle hodina v podnicích tohoto typu je vždycky dost zajímavá
+Left: Vypadá to tak...
+
+<<jump End>>
+===
+
+
+title: End
+---
+<<end_segment LevelManager "Hospoda zavírá">>
+===
