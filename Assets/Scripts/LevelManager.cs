@@ -119,7 +119,7 @@ public class LevelManager : MonoBehaviour
     }
 
     [YarnCommand("end_act")]
-    public void EndAct(string text)
+    public void EndAct(string text, string setting)
     {
         Debug.Log(text);
 
@@ -132,8 +132,8 @@ public class LevelManager : MonoBehaviour
             Utility.sceneScreenStayTime,
             whenInBlack: () => 
             {
-                SetRandomBackground(text.ToESetting());
-                StartNextAct(currentAct.ToNextEAct(text.ToESetting()));
+                SetRandomBackground(setting.ToESetting());
+                StartNextAct(currentAct.ToNextEAct(setting.ToESetting()));
             }
         );
     }

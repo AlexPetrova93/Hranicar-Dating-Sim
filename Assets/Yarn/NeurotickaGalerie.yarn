@@ -7,11 +7,313 @@
 Right: Poslední přeživší
 Left: Vypadá to tak...
 
+-> Right: Jsem nějakej unavenej z tohohle celýho
+    <<jump NodeDomu>>
+-> Right: Nemyslíš si, že tu trochu překážíme?
+    <<jump NodePrekazime>>
+-> Right: Hele, já potřebuju něco vyřídit s támhletím chlápkem.
+    <<jump NodeChlapek>>
+
+===
+
+title: NodeDomu
+position: 230,-99
+---
+Left: Tak jdeme domu?
+Right: Kam jdeš Ty nevim, ale já jdu
+-> Left: Ježiš,to nebyla snaha se pozvat k Tobě...
+    Flavor: *jedna z umělkyň nahlas povzdechne poté, co se snažila několik minut najít alespoň polo-plnou sklenici vína*
+    Left: No... To je asi znamení
+    <<jump End>>
+-> Left: Kdybych se chtěl s někým dneska vyspat,tak zvolím snažší cíl, neboj.
+    Flavor: *jedna z umělkyň nahlas povzdechne poté, co se snažila několik minut najít alespoň polo-plnou sklenici vína*
+    -> Right: Tak běž hledat náročné cíle jinam. 
+        <<jump End>>
+    -> Right: Tak tím pádem, je to asi docela jasný. 
+        Right: Mimochodem...
+        <<jump NodeAniVyspat>>
+    -> Right: Škoda.
+        Left: Že se s Tebou nechci vyspat nebo že už došlo to lahodné víno?
+        <<jump NodeAniVyspat>>
+-> Left: Ale tohle je právě ten ideální čas na ten sociální kapitál!
+    Right: Hele, jsem sice osamělá, ale zas tak moc taky ne.
+    Left: Choose your fighter
+    -> Left: Ztroskotaný kurátor, co to nikdy nedotáhnul za hranice
+    -> Left: Umělec, který každou větu začíná slovy "Když jsem učil ve Francii"
+    -> Left: Študák, co jim oběma leze do zadku, aby dosáhnul toho, o čem oba za mlada snili
+    Right: Tak tady nabírat nepotřebuju
+    Left: Dej tomu pár let a dojde Ti, že děláš chybu
+    Flavor: *ke konverzaci se připotácí kurátor, který vše slyšel a se slovy "přesně" si uvědomí, že došlo víno*
+    <<jump End>>
+===
+
+title: NodeAniVyspat
+position: 458,-172
+---
+Right: Ty se se mnou nechceš ANI vyspat?
+Left: Stejně je to jedno...
+
+-> Right: Teďka zníš jako to ufňukaný video za Tebou.
+    -> Left: Ufff, tak to bylo tvrdý. Taková jsi vždycky?
+        <<jump NodeUffTvrdy>>
+    -> Left: Já to sice nedokoukala, ale nepřišlo mi tak blbý....
+        Right: Tak teď s Tebou nechci spát ani já.
+        Left: Ufff, tak to bylo tvrdý. Taková jsi vždycky?
+        <<jump NodeUffTvrdy>>
+-> Right: A co není?
+    Left: Jo no...
+    Right: To nebylo konstatování, ale otázka.
+    Left: Aha
+    -> Right: Tak máš přece něco, co Tě žene, ne?
+        -> Left: Mám
+        -> Left: Schnoucí epoxid
+        -> Left: Abych nedopadla jako oni.
+        <<jump NodeCoTeZene>>
+    -> Right: Nevim, mě je třeba jedno fakt skoro úplně všechno
+        Right: Když odzoomoješ, tak přijdeš na to, že je to vlastně celý takovej proud řeky. 
+        Right: Občas máš pocit, že stojíš mimo něj a jakoby naviguješ loďku. A jindy zase sedíš přímo v tý loďce. 
+        Right: Důležitý ale je, že někdy jsou peřeje, někdy je před Tebou vodopád, kterej nevidíš a jindy je v tý řece někdo s Tebou. 
+        Right: Někdy je mimo ní a Ty se musíš rozhodnout, jestli ho nabereš nebo ne. Ale nakonec se s tím musíš smířit a vyjít ven suchou nohou. 
+        Right: Já bych řekla, že mám sucho.
+        Left: Ježiš teď jsi už tak abstraktní, že fakt nevim o čem se bavíme. Mohl bys být třeba i konkrétní?
+        -> Right: Takový konverzace mám nejradši
+            Left: A prokázalo se Ti, že by někdy k něčemu byly?
+            Right: Párkrát se se mnou díky tomu někdo vyspal...
+            Flavor: *ke konverzaci se připotácí kurátorka. nejprve se chce se konverzaci přidat, ale když si uvědomí, že došlo víno, rozmyslí si to*
+            <<jump End>>
+        -> Right: Furt o tom stejným, baby
+            Flavor: *ke konverzaci se připotácí recenzent a se slovy "já už taky nevim" si uvědomí, že došlo víno*
+             <<jump End>>
+-> Right: A co není...
+    Left: Jo no...
+    Flavor: *ke konverzaci se připotácí kurátor a se slovy "přesně" si uvědomí, že došlo víno*
+    <<jump End>>
+===
+
+title: NodeUffTvrdy
+position: 704,-232
+---
+-> Right: Tvrdý už právě není nic
+    -> Left: Hele, asi zase brzdi, tohle je na mě trochu moc
+    -> Left: Same...
+    Flavor: *kolem projde recenzentka, která si nahlas povzdechne poté, co se snažila několik minut najít alespoň polo-plnou sklenici vína*
+    Right: Bída, co?
+    <<jump End>>
+-> Right: Jenom na vernisážích.
+    Left: Tak proč na ně sakra chodíš?
+    Right: Ze stejnýho důvodu jako ona.
+    Flavor: *kolem projde recenzentka, která si nahlas povzdechne poté, co se snažila několik minut najít alespoň polo-plnou sklenici vína*
+    Right: Bída, co?
+    <<jump End>>
+===
+
+title: NodeCoTeZene
+position: 718,-155
+---
+-> Right: Tak to je přece krásný, ne?
+-> Right: To je trochu smutný.
+
+Left: Nevím, čemu ještě věřit.
+Right: Myslíš, že kdy bylo něco, čemu se dalo absolutně věřit?
+
+-> Left: Že Knížák je nesmrtelnej?
+    Right: Jako Karel Gott.
+    Right: Nebo Miloš Zeman.
+    Left: Ale ty jsou oba mrtví.
+    Right: Právě.
+    <<jump Kuratorka1>>
+-> Left: Mám pocit, že kdysi se dalo alespoň věřit tomu, že se naše děti budou mít líp, než my.
+    Right: Hele, naši rodiče si to taky určitě mysleli. A jak to dopadlo...
+    -> Right: Není čemu věřit, protože všechno je a bylo v prdeli.
+        <<jump Kuratorka1>>
+    -> Right: Nemá cenu si dělat projekce. Nikdy nevíš, jak to dopadne.
+        Left: Jo no, i ta za Tebou je nakřivo.
+        <<jump Kuratorka1>>
+
+===
+
+title: Kuratorka1
+position: 977,-212
+---
+Flavor: *ke konverzaci se připotácí kurátorka a se slovy "si furt nestěžujte mladý" si uvědomí, že došlo víno a nevrle zamručí*
+<<jump End>>
+===
+
+
+title: NodePrekazime
+position: 242,46
+---
+Left: Ne, pojďme počkat. Schválně, jestli nás vyženou
+Right: Já Ti nevim. Je to taková divná parta.
+
+-> Left: Copak? Ztrácíš k těm lidem respekt?    
+    Right: Nebudu lhát, číst jejich texty a vidět je v tomhle stavu jsou dva dost jiný světy.
+    Left: Fakt je v tom takovej rozdíl?
+    Left: Jen dvě strany stejný mince snahy oddálit ten průser, kterej nás všechny čeká. Otupěný nebo předstírání, že na to aktivně upozorňuješ...
+    Right: Kterej průser myslíš?
+    Left: Dosaď si jakoukoliv globální nebo lokální katastrofu, která se odehrává v době, kdy tohle hraješ.
+    Right: Ono se tohle bude vystavovat ještě jinde, než v Hraničáři?
+    Left: Vypadá to, že se snaží aby to bylo aktuální nějak dlouhodobě.
+    Right: Předem prohranej boj
+    Left: Přesně
+    -> Right: Vypadá to, že my ale taky prohráváme
+        Left: Otázka je, jestli se to dá vůbec vyhrát
+        Right: Minimálně se dá dost ztrapnit ty dva, co to hrajou.
+        Left: Tak vzhůru do toho
+        Flavor: *jeden z umělců nahlas povzdechne poté, co se snažil několik minut najít alespoň polo-plnou sklenici vína*
+        <<jump End>>
+    -> Right: Ale po nějaký trvanlivosti nakonec toužíme všichni, ne?
+        Left: Jediný věci, co jsou trvanlivý jsou ty, co by trvanlivý bejt neměli
+        Right: Třeba plasty?
+        Left: Tyvole, co je tohle za obrat?
+        Right: Sorry, to asi to video s těma emo-romantickýma rituálama.
+        Left: Co?
+        Right: Za Tebou. Ty haldy někde asi v Ostravě, nevim.
+        Left: To s elfama nebo na tý planetě?
+        Right: Planetě. Se podívej, ne? Máš to za sebou řikám.
+        Left: Jo... Tak to zrovna moc trvanlivý nebude
+        Right: Taky mám ten pocit. 
+        Right: Zahlídnul jsem tady novej Muse magazine.
+        -> Left: Co?
+            Right: Doprdele, fakt už jsem starej.
+            Left: Ježiš tak neznám jeden časák, no...
+            Right: Přemýšlím o změně kariéry...
+            Right: Ani nevim, jestli se tomu tak dá vůbec říkat. Mě za to nikdo ani neplatí. 
+            <<jump Kurator1>>
+        -> Left: Aha, a?
+            Right: No že už vůbec nevím, jak se k tomu artu vztahovat. Jakoby mě dva roky zavřený doma úplně odnaučili analyzovat art. 
+            Left: Nebo alespoň tušit, o čem to je. Jestli je to dobrý...
+            Right: Přemýšlíš o změně kariéry?
+            Left: Nevim, jestli se tomu tak dá vůbec říkat. Mě za to nikdo ani neplatí. 
+            <<jump Kurator1>>
+-> Left: A co to vypovídá o nás, že jsme tu s nima?
+    -> Right: Že jsme v prdeli
+    -> Right: Že bychom to asi měli přijmout.
+    Left: Choose your fighter
+    -> Left: Ztroskotaný kurátor, co to nikdy nedotáhnul za hranice
+    -> Left: Umělec, který každou větu začíná slovy "Když jsem učil ve Francii"
+    -> Left: Študák, co jim oběma leze do zadku, aby dosáhnul toho, o čem oba za mlada snili
+    <<jump NodeChooseYourFighter>>
+
+===
+
+
+title: NodeChooseYourFighter
+position: 477,75
+---
+-> Right: Tohle člověka fakt kopne do reality, co?'
+    Left: Tohle je vyloženě hyperrealismus
+    Right: To miluje moje matka.
+    Left: Co má proti abstrakci?
+    -> Right: "To bych si prostě nad postel nepověsila"
+    -> Right: Prej jsou to všechno "buzíci"
+    -> Right: Ona je celá taková hodně ostrá, věcná a konkrétní.
+    Left: Očividně mám fakt typ
+    Right: Jak to myslíš?
+    Left: Narušený děti šílenejch rodičů je moje cílovka.
+    Right: Ty seš taky velká výhra
+    <<jump NodeOpustitVzorce>>
+-> Right: To neřikej tak nahlas, sakra.
+    Left: Ty bys mě nebránila, kdyby mě někdo napadnul?
+    Right: Hele, mě tady mělo být nepříjemně, ne Tobě.
+    Left: Kdo řiká, že je mi nepohodlně?
+    Right: To je nějaká forma sebepoškozování?
+    -> Left: To už mám za sebou.
+        <<jump NodeOpustitVzorce>>
+    -> Left: Nikdy jsem nad tím tak nepřemýšlela.
+        Left: Ale do jistý míry, co není?
+        Right: *počká, až někdo z podnapilých lidí z galerie řekne něco naprosto absurdního, za co by ho/jí bylo možné naprosto odsoudit jako očividně nešťastnou osobu*
+        Left: ...
+        Right: ...
+        Left: ...
+        Flavor: *nikdo nic absurdního neřekne, baví se o výchově dětí*
+        Flavor: *jeden z umělců nahlas povzdechne poté, co se snažil několik minut najít alespoň polo-plnou sklenici vína*
+        <<jump End>>
+===
+
+title: NodeOpustitVzorce
+position: 666,75
+---
+Left: Myslíš, že se dá tyhle vzorce opustit?
+Right: Myslíš, že má človek na výběr?
+Left: Tady jsme svědky toho, jak to vypadá, když to člověk neudělá.
+-> Right: A je to fakt tak hrozný?
+    Left: Začínám seriźně přemýšlet o změně kariéry.
+    Left: Těžko říct, jestli se tomu tak dá vůbec říkat. Mě za to nikdo ani neplatí. 
+    <<jump Kurator1>>
+-> Right: Ty seš fakt strašnej pravičák.
+    -> Left: Náhodou, zrovna  proti alkoholismu Lenin mega brojil.
+        <<jump Recenzentka1>>
+    -> Left: Náhodou, já mám Marxe načtenýho!
+        <<jump Recenzentka1>>
+    -> Left: Náhodou, já jsem četl jak Mein Kampf tak Kapitál
+        Right: Tak ty se tady k tý partě asi přidej.
+        <<jump Recenzentka2>>
+    -> Left: Náhodou jsem, no.
+        Right: Tak ty se tady k tý partě asi přidej.
+        <<jump Recenzentka2>>
+===
+
+title: Recenzentka1
+position: 1075,50
+---
+Flavor: *podnapilá recenzentka něco vřelého zamrmlá*
+<<jump Recenzentka2>>
+===
+
+title: Recenzentka2
+position: 1291,95
+---
+Flavor: *recenzentka si nahlas povzdechne poté, co se snažila několik minut najít alespoň polo-plnou sklenici vína*
+<<jump End>>
+===
+
+title: Kurator1
+position: 993,-126
+---
+Flavor: *ke konverzaci se připotácí kurátor a se slovy "ani mě" si uvědomí, že došlo víno*
+<<jump End>>
+===
+
+
+title: NodeChlapek
+position: 234,173
+---
+-> Left: To zní jako špatnej nápad
+    Right: Já tam jdu. 
+    <<jump NodeChlapek2>>
+-> Left: Je to nějaká hodně osobní otázka, že jo?
+    Right: Asi trochu jo. Je to můj bývalej vedoucí.
+    Left: Tahle historka nezačíná úplně nejlíp...
+    Right: Ježiš to ne, tak jsem to nemyslela. To je většinou problém s holkama spíš, ne?
+    Left: Právě.
+    Right: Právě.
+    Left: ...
+    -> Right: Já tam jdu. 
+    -> Right: Kašlu na to. Zajdu za ním skočím někdy do školy
+    <<jump NodeChlapek2>>
+===
+
+title: NodeChlapek2
+position: 458,182
+---
+Left: *mlčky sleduje obraz na stěně za sebou*
+Right: *zůstane stát na místě* 
+Right: Mám pocit, že je tam do dneška něco nevyřešenýho. Takový trapno. Jako třeba teďka, vidíš to, žejo? Jsme tu jedni z posledních lidí na verni a on mě ani nepozdravil. 
+Right: Naprosto netuším, jestli jsem jenom přecitlivělej, možná o nic nejde. Ale tohle je přece strašně divný, ne? Občas mi i někdo řekne, že s ním byl někde na pivu. Asi je normální, že má některý radši.
+Right: Ale proč nemá takhle rád i mě?
+Left: Ta modrá je fakt hodně specifická, co?
+Right: To je Oregonská modř
+Left: Ha, vidíš to!
+Right: Posloucháš mě vůbec?
+Left: To je ta strašně drahá modrá, žejo?
+Flavor: *ke konverzaci se připotácí kurátor a se slovy "kurevsky drahá" si uvědomí, že došlo víno*
 <<jump End>>
 ===
 
 
 title: End
+position: 1580,0
 ---
-<<end_act LevelCanvas "Vernisáž končí víno došlo">>
+<<end_act LevelCanvas "Vernisáž končí víno došlo" "noise">>
 ===

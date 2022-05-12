@@ -2,7 +2,7 @@
 position: -542,8
 ---
 -> Right: Debug: Skip Seznameni
-    <<end_act LevelCanvas "">>
+    <<jump EndEmpty>>
 -> Right: Debug: Continue Seznameni
 
 Left: Klasicky jdu pozdě, už to někdo zahajoval? Moc mě těší, mimochodem, pardon. 
@@ -57,7 +57,7 @@ Left: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí,
 -> Right: *pasivně agresivně udržuje oční kontakt*
 -> Right: *jakoby najednou zasažena krásou díla před sebou ho začne pozorovat ve snaze najít v díle nové téma, které by je z trapné situace vyprostilo*
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 title: Seznameni1AB
@@ -119,7 +119,7 @@ position: -94,-154
 
 Left: Hele, bílý chlapy už možná... Ne?
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
@@ -179,7 +179,7 @@ Left: Tady se za něj platí?
             -> Left: Já taky ne
             -> Left: Já jo
             Right: Hm...
-            <<end_act LevelCanvas "">>
+            <<jump EndEmpty>>
         -> Right: Nezapomeň na vonné svíčky a mátový čaj
             Left: Na máťák letky nechoděj?
             Right: Ne
@@ -193,7 +193,7 @@ Left: Tady se za něj platí?
 
     <<jump Seznameni1BA_1>>
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
@@ -228,7 +228,7 @@ position: 342,-175
     <<end_act LevelCanvas "">>
 -> Right: Asi už stárnu
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 title: Seznameni1BB
@@ -259,7 +259,7 @@ Right: Nojo, stojíš tu holt s celebritou
 -> Left: A jakou?
     Right: Vážně Tě to zajímá nebo se ptáš jen proto, že jsi na vernisáži a je to ta první zdvořilá otázka, co Tě napadla?
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
@@ -306,7 +306,7 @@ position: -94,78
         -> Right: *zapálí si*
         -> Right: *mlčky zůstane stát před galerií*
     -> Right: *zapálí si*
-    <<end_act LevelCanvas "">>
+    <<jump EndEmpty>>
 -> Right: Je pravda, že pak ta jemná textura epoxidu nevynikne.
     Left: Uff, epoxid mems už jsou trochu over, ne?
     Right: Jak to myslíš?
@@ -317,8 +317,7 @@ position: -94,78
     Left: ...
     Right: Ty děláš s epoxidem, žejo?
     Left: A všichni bílý chlapy se fakt nedaj číst, a co jako?!
-
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
@@ -339,7 +338,7 @@ Right: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí
 -> Left: *pasivně agresivně udržuje oční kontakt*
 -> Left: *jakoby najednou zasaženi krásou díla před sebou ho začne pozorovat ve snaze najít v něm nové téma, které by je z trapné situace vyprostilo*
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
@@ -369,7 +368,7 @@ position: 360,81
 ---
 -> Left: *Zasměje se*
     Right: Ale notak... Zas tak vtipný to nebylo
-    <<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+    <<jump End>>
 -> Left: *Nezasměje se*
     Right: Ale notak... To by náhodou docela vtipný
     Right: Já jsem Tě urazil, žejo?
@@ -443,7 +442,7 @@ Left: U vchodu jsi řikala něco o tom, jak to každýho znervózňuje, ač teda
     Right: No! A znervózňuje Tě to teda?
     Left: Si zas tak nefandi
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
@@ -475,7 +474,23 @@ Right: *dívá se trapně po místnosti ve snaze potkat se s jiným párem očí
 -> Left: *pasivně agresivně udržuje oční kontakt*
 -> Left: *jakoby najednou zasaženi krásou díla před sebou ho začne pozorovat ve snaze najít v díle nové téma, které by je z trapné situace vyprostilo*
 
-<<end_act LevelCanvas "situaci přeruší zahájení výstavy">>
+<<jump End>>
 
 ===
 
+
+title: End
+position: 167,270
+---
+
+<<end_act LevelCanvas "situaci přeruší zahájení výstavy" "street">>
+
+===
+
+title: EndEmpty
+position: 167,270
+---
+
+<<end_act LevelCanvas "" "street">>
+
+===

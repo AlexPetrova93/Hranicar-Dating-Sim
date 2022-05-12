@@ -521,7 +521,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 83406ecb917353442acbeff172b3447a, type: 3}
   bgPubSprites:
   - {fileID: 21300000, guid: 8f5fa0b1eb470004a897ad7e7de8ad01, type: 3}
-  bgNoiseSprites: []
+  bgNoiseSprites:
+  - {fileID: 21300000, guid: b2e9f5d618d06aa4cb254f776b0f9882, type: 3}
   projectSeznameni: {fileID: 7545569452688597077, guid: 4833925a4a2c2d148a317b2600ca22da, type: 3}
   projectSexAVztahy: {fileID: 7545569452688597077, guid: 7b1dd3f240e9bd84787427d9609b8234, type: 3}
   projectNeurotickaGalerie: {fileID: 7545569452688597077, guid: 9cd7e2d388513e24fb92891e34cf913d, type: 3}

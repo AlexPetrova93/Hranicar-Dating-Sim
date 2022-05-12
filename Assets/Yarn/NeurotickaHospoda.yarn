@@ -1,4 +1,5 @@
 ﻿title: Start
+position: -293,163
 ---
 -> Right: Debug: Skip Hospoda
     <<jump End>>
@@ -7,11 +8,369 @@
 Right: Tahle hodina v podnicích tohoto typu je vždycky dost zajímavá
 Left: Vypadá to tak...
 
+-> Right: Jsem nějakej unavenej z tohohle celýho
+    <<jump NodeUnavenej>>
+-> Right: Necítíš se tu trochu nepatřičně?
+    <<jump NodeNepatricne>>
+-> Right: Nechceme se alespoň uklidit támhle k tomu kulečníku?
+    <<jump NodeKulecnik>>
+
+===
+
+title: NodeUnavenej
+position: 40,-128
+---
+Left: Sotva jsme dosedli...
+Right: Já vím, ale nějak to necítím.
+Left: Chceš jít někam jinam? 
+Left: Kdyžtak já nebydlim daleko. Ty seš tu vlakem?
+Right: Zase to moc netlač, jo?
+-> Left: Kdybych se chtěl s někým dneska jen vyspat, tak zvolím snažší cíl, neboj.
+    <<jump NodeKdybyVyspat>>
+-> Left: No dobře. Asi ze mě mluví osamělost, promiň. 
+    -> Right: Osamělý jsme všichni. Nakonec jsem vždycky na všechno sami...
+        Left: ...a čím dřív Ti to dojde, tím dřív se Ti uleví. Jojo, díky, tohle už jsem párkrát slyšela.
+        <<jump NodeJakDlouhoSingl>>
+    -> Right: Jo, to docela dobře chápu. Promiň, nemyslela jsem to zle.
+        Left: To je v pohodě. Prostě je mi nějak smutno.
+        <<jump NodeJakDlouhoSingl>>
+
+===
+
+title: NodeJakDlouhoSingl
+position: 233,-50
+---
+-> Right: Jak dlouho seš singl?
+-> Right: Čím myslíš, že to je?
+
+<<jump NodeJakDlouhoSingl2>>
+===
+
+title: NodeJakDlouhoSingl2
+position: 448,-50
+---
+-> Left: Nevím, hrozně mě vytěžuje práce.   
+    Right: Ale tak dneska sedíš v hospodě. Se mnou...
+    Left: Kdybych se chtěl s někým dneska jen vyspat, tak zvolím snažší cíl, neboj.
+    <<jump NodeKdybyVyspat>>
+-> Left: Nevím. Všechno jde do háje a alespoň nechci lovit divokou zvěř v post-apokalyptický krajině sama.
+    Right: Divokou zvěř? To tomu antropocénu moc nevěříš...  
+    <<jump NodeCetlJsi>>  
+
+===
+
+title: NodeCetlJsi
+position: 677,-63
+---
+-> Left: Četl jsi Cestu od McCarthyho?
+-> Left: Četl jsi New York 2140?
+-> Left: Slyšel jsi to v Chapadlech Murmuru o klimatický krizi?
+
+<<jump NodeCetlJsi2>>
+===
+
+title: NodeCetlJsi2
+position: 894,-64
+---
+-> Right: Ne
+-> Right: Jo
+
+Left: Už ani nevim, kam jsem tim mířila
+Right: Že v lásce se skrývá naděje?
+
+-> Left: Takovejhle kýč bych z huby nevypustil.
+    Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
+    <<jump End>>
+-> Left: To jsem sice říct nechtěla, ale je to takový hezký uzavření.
+    Right: Uzavření?
+    Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
+    Right: Aha
+    <<jump End>>
+
+===
+
+title: NodeKdybyVyspat
+position: 298,-150
+---
+Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
+-> Right: Tak běž hledat náročné cíle jinam. 
+    <<jump End>>
+-> Right: Tak tím pádem, je to asi docela jasný. 
+    Right: Mimochodem...
+    <<jump NodeAniVyspat>>
+-> Right: Škoda.
+    Left: Že se s Tebou nechci vyspat nebo že už nám nenalejou?
+    <<jump NodeAniVyspat>>
+===
+
+title: NodeAniVyspat
+position: 572,-193
+---
+Right: Ty se se mnou nechceš ANI vyspat?
+Left: Stejně je to jedno...
+-> Right: Teďka zníš jako jedno z těch ufňukanejch videí na tý výstavě.
+    -> Left: Ufff, tak to bylo tvrdý. Taková jsi vždycky?
+        <<jump NodeUffTvrdy>>
+    -> Left: Mě tak špatný nepřišli...
+        Right: Tak teď s Tebou nechci spát ani já.
+        Left: Ufff, tak to bylo tvrdý. Taková jsi vždycky?
+        <<jump NodeUffTvrdy>>
+-> Right: A co není?
+    Left: Jo no...
+    Right: To nebylo konstatování, ale otázka.
+    Left: Aha
+    -> Right: Tak máš přece něco, co Tě žene, ne?
+        -> Left: Mám
+        -> Left: Klauzury
+        -> Left: Láska
+        Right: Tak to je přece krásný, ne?
+        Left: Nevím, mám pocit, že už i tomu něvěřím
+        Right: Co je to vlastně důvěra? Je to naděje?
+        Left: Tohle na mě nezkoušej.
+        Right: Neuhýbej od otázky
+        -> Left: Ještě se mě zeptej, jakou má ten pocit barvu.
+        -> Left: Jo, asi naděje.
+        Flavor: *ke stolu se přiblíží číšník a upozorní je, už ale opravdu musí odejít*
+        -> Right: *na číšníka* A nenechal by jste nás tu ještě chvilku posedět?
+        -> Right: Tak nic no...
+        Left: Kašli na to. Stejně už očividně nic moc nechápu
+        <<jump End>>
+    -> Right: Nevim, mě je třeba jedno fakt skoro úplně všechno
+        Right: Když odzoomoješ, tak přijdeš na to, že je to vlastně celý takovej proud řeky. 
+        Right: Občas máš pocit, že stojíš mimo něj a jakoby naviguješ loďku. A jindy zase sedíš přímo v tý loďce. 
+        Right: Důležitý ale je, že někdy jsou peřeje, někdy je před Tebou vodopád, kterej nevidíš a jindy je v tý řece někdo s Tebou. 
+        Right: Někdy je mimo ní a Ty se musíš rozhodnout, jestli ho nabereš nebo ne. Ale nakonec se s tím musíš smířit a vyjít ven suchou nohou. 
+        Right: Já bych řekla, že mám sucho.
+        Left: Ježiš teď jsi už tak abstraktní, že fakt nevim o čem se bavíme. Mohl bys být třeba i konkrétní?
+        -> Right: Takový konverzace mám nejradši
+            Left: A prokázalo se Ti, že by někdy k něčemu byly?
+            Right: Párkrát se se mnou díky tomu někdo vyspal...
+            <<jump Cisnik1>>
+        -> Right: Furt o tom stejným, baby
+            Flavor: *ke stolu se přiblíží číšník a upozorní je, už ale opravdu musí odejít*
+            Left: Stejně už očividně nic moc nechápu
+            <<jump End>>
+
+-> Right: A co není...
+    Left: Jo no...
+    <<jump Cisnik1>>
+
+===
+
+title: NodeUffTvrdy
+position: 817,-205
+---
+-> Right: Tvrdý už právě není nic
+    -> Left: Hele, asi zase brzdi, tohle je na mě trochu moc
+        Right: *na číšníka, který utírá skleničky za barem* Nenalejete nám ještě něco?
+        <<jump Cisnik1>>
+    -> Left: Same...
+        <<jump Cisnik1>>
+-> Right: Jenom když sedím v hospodě na suchu
+    Left: *na číšníka, který utírá skleničky za barem* Nenalejete nám ještě něco?
+    <<jump Cisnik1>>
+
+===
+
+title: NodeNepatricne
+position: 18,164
+---
+-> Left: Copak? Vadí Ti zařadit se k proletariátu?
+    Right: Nebudu lhát, číst to nebo to žít jsou dvě hodně odlišné věci.
+    Left: Oliver Twist nebo Marx?
+    Right: Je v tom rozdíl?
+    -> Left: Oboje je tak starý, že nás to před tim průserem stejně nezachrání.
+        Right: Kterej myslíš?
+        Left: Dosaď si jakoukoliv globální nebo lokální katastrofu, která se odehrává v době, kdy tohle hraješ.
+        Right: Ono se tohle bude vystavovat ještě jinde, než v Hraničáři?
+        Left: Vypadá to, že se snaží aby to bylo aktuální nějak dlouhodobě.
+        Right: Předem prohranej boj
+        Left: Přesně
+        -> Right: Vypadá to, že my ale taky prohráváme
+            Left: Otázka je, jestli se to dá vůbec vyhrát
+            Right: Minimálně se dá dost ztrapnit ty dva, co to hrajou.
+            Left: Tak vzhůru do toho
+            Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
+            <<jump End>>
+        -> Right: Ale po nějaký trvanlivosti nakonec toužíme všichni, ne?
+            Left: Jediný věci, co jsou trvanlivý jsou ty, co by trvanlivý bejt neměli
+            Right: Třeba plasty?
+            Left: Tyvole, co je tohle za obrat?
+            Right: Sorry, koukám támhle na tu mucholapku. 
+            Left: Co?
+            Right: Za barem. Jak nad těma kelímkama s dopitým pivem visí ta mucholapka. 
+            Left: Jaká mucholapka? Jako nějaká podomácku vyrobená?
+            Right: Ne, normální. Ježiš se otoč, za barem řikám.
+            Left: Tak tohle je vyloženě děsivě trvanlivý. Musim uznat.
+            Right: Právě
+            Left: Jak dlouho už myslíš, že to tam je?
+            Right: Asi tak dlouho, jak tady ty lidi seděj. 
+            -> Left: Není to něčím trochu romantický?
+                <<jump NodeTrochuRomanticky>>
+            -> Left: *počká, až jeden z podnapilých členů osazenstva udělá něco zábavného, čemu by se mohli společně zasmát*
+                <<jump NodeZasmat>>
+    -> Left: Ale jo. Nebo si to alespoň chci myslet.
+        Right: Mám pocit, jako by se z tohohle statementu dalo vyčíst něco o Tvojí politický orientaci.
+        Left: Nejen o ní.
+        -> Right: Kde je na politickým kompasu nenapravitelná idealistka?
+        -> Right: Kde je na politickým kompasu nesnesitelný cynik?
+        <<jump NodePolitickyKompas>>
+-> Left: To bych brala spíš jako dobrý znamení. Do posledního místního podniku, co má ještě otevřeno patřit fakt nechceš...
+    -> Right: Což o to, já si jich zažila dost
+        Left: Že mě to nepřekvapuje...
+        Right: Jak to myslíš?
+        <<jump NodeCetlJsi>>
+    -> Right: Nechceme se alespoň uklidit támhle k tomu kulečníku?
+        <<jump NodeKulecnik>>
+
+===
+
+title: NodePolitickyKompas
+position: 351,233
+---
+-> Left: Úplně vlevo dole
+-> Left: Úplně v prdeli
+-> Left: Uprostřed
+<<jump NodePolitickyKompas2>>
+===
+
+title: NodePolitickyKompas2
+position: 576,248
+---
+-> Right: Ježiš...
+    Left: Ty volíš KDU-ČSL?
+    Right: Ty volila moje máma
+    Left: Přesvědčil jí skákací hrad?
+    -> Right: Spíš nemá ráda buzíky
+    -> Right: Spíš potratová politika.
+    -> Right: Ona to měla takový eklektický celý
+    Left: Očividně mám fakt typ
+    Right: Jak to myslíš?
+    Left: Narušený děti šílenejch rodičů je moje cílovka.
+    Right: Ty seš taky velká výhra   
+    <<jump NodeOpustitVzorce>> 
+-> Right: Tak tohle místo Tě alespoň uvede do reality
+    Left: Tágem po hlavě
+    <<jump NodeNeprijemne>>
+-> Right: Tak to tady neřikej moc nahlas
+    Left: Ty bys mě nebránila, kdyby mě někdo napadnul?
+    <<jump NodeNeprijemne>>
+
+===
+
+title: NodeNeprijemne
+position: 804,301
+---
+Right: Hele, mě tady mělo být nepříjemně, ne Tobě.
+Left: Kdo řiká, že je mi nepohodlně?
+Right: To je nějaká forma sebepoškozování?
+-> Left: To už mám za sebou.
+    <<jump NodeOpustitVzorce>>
+-> Left: Nikdy jsem nad tím tak nepřemýšlela.
+    Left: Ale do jistý míry je to každá intoxikace, ne?
+    Left: *počká, až jeden z podnapilých členů osazenstva udělá něco zábavného, čemu by se mohli společně zasmát*
+    <<jump NodeZasmat>>
+
+===
+
+title: NodeOpustitVzorce
+position: 1016,241
+---
+Left: Myslíš, že se dá tyhle vzorce opustit?
+Right: Myslíš, že má človek na výběr?
+Left: Tady jsme svědky toho, jak to vypadá, když to člověk neudělá.
+-> Right: A je to fakt tak hrozný?
+    Left: Není to něčím trochu romantický?
+    <<jump NodeTrochuRomanticky>>
+-> Right: Ty seš fakt strašnej pravičák.
+    -> Left: Náhodou, zrovna  proti alkoholismu Lenin mega brojil.
+        Flavor: *od vedlejšího stolu se ozve nevrlé zamrmlání*
+        <<jump Cisnik2>>
+    -> Left: Náhodou, já mám Marxe načtenýho!
+        Flavor: *od vedlejšího stolu se ozve nevrlé zamrmlání*
+        <<jump Cisnik2>>
+    -> Left: Náhodou, já jsem četl jak Mein Kampf tak Kapitál
+        Right: Tak teď si tu připadám nepatřičně už nadvakrát
+        <<jump Cisnik2>>
+    -> Left: Náhodou jsem, no.
+        Right: Tak teď si tu připadám nepatřičně už nadvakrát
+        <<jump Cisnik2>>
+
+===
+
+title: NodeTrochuRomanticky
+position: 1214,176
+---
+Right: Alkoholismus?
+Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
 <<jump End>>
+
+===
+
+title: NodeZasmat
+position: 908,121
+---
+Right: ...
+Left: ...
+Right: ...
+Left: ...
+Flavor: *muž nic zábavného neudělá*
+Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
+<<jump End>>
+
 ===
 
 
-title: End
+title: NodeKulecnik
+position: 36,306
 ---
-<<end_act LevelCanvas "Hospoda zavírá">>
+Left: Ty umíš hrát kulečník?
+Right: Když se rodiče rozvedli, tak jsem se s tátou vídal nějčastěji na kulečníku. Neni to ten typ, co by si rád jen sednul a povídal.
+-> Left: Nebo povídal obecně, co?
+    Right: Jo no.
+    Left: Že mě to nepřekvapuje...
+    Right: Jak to myslíš?
+    <<jump NodeCetlJsi>>
+-> Left: Tak to mě vyklepneš.
+    Right: On si obecně nerad povídá
+    -> Left: Že mě to nepřekvapuje...
+        Right: Jak to myslíš?
+        <<jump NodeCetlJsi>>
+    -> Left: Ale tak umíš kulečník, ne?
+        Right: Zvláštní je, že jsme se za ty leta nikdy nezlepšila... Ani on. Do dneška hrajem stejně blbě. Možná je to symptomatický pro celej ten vztah.
+        Left: *mlčky začne vybírat tágo*
+        Right: Jakoby se to prostě nijak nehejbalo. Řiká se, že si člověk celej život myslí, že problém je ten jeden rodič, až jednoho dne přijde na to, že je to přesně obráceně.
+        Right: Nevím, jestli už jsem za tímhle bodem nebo mě teprve čeká. Že mám léta terapie před sebou mě neděsí až tak, jakože jednoho dne umře a já jsem to třeba do tý doby nestihl vyřešit.
+        Right: Co když jsem to zpackala?
+        Left: Chceš to delší tágo nebo to kratší?
+        Right: To kratší je rozstřelový
+        Left: Ha, vidíš, to řikám, že mě vyklepneš. Nevim vůbec nic.
+        Right: Posloucháš mě vůbec?
+        Left: Je to na střídačku, žejo? Plný, prázdný a doprostřed černá. To si snad ještě pamatuju.
+        Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami a kulečník byl jen do deseti hodin*
+        <<jump End>>
+
+===
+
+
+title: Cisnik1
+position: 1049,-179
+---
+Flavor: *ke stolu se přiblíží číšník a upozorní je, už ale opravdu musí odejít*
+<<jump End>>
+
+===
+
+title: Cisnik2
+position: 1241,269
+---
+Flavor: *ke stolu se přiblíží číšník a upozorní je, že poslední objednávky byly před desti minutami*
+<<jump End>>
+
+===
+
+title: End
+position: 1423,162
+---
+<<end_act LevelCanvas "Hospoda zavírá" "noise">>
 ===

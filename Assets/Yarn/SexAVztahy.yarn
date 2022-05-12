@@ -1,4 +1,5 @@
 ﻿title: Start
+position: -531,93
 ---
 
 -> Right: Debug: Skip SexAVztahy to Galerie
@@ -7,32 +8,687 @@
     <<jump EndPub>>
 -> Right: Debug: Continue SexAVztahy
 
-<<jump Node1>>
+<<jump Node0>>
 
 ===
 
-title: Node1
+title: Node0
+position: -203,140
 ---
 
 -> Left: Já už ten emoromantismus nedávám...
+    -> Left: moc mi to připomíná všechny ty rozpačitý Tinder rande
+        -> Right: Taky nikdy nevíš co napsat
+        -> Right: "Ahoj, jak se máš?"
+        <<jump Node1NesnasimKdyz>>
+    -> Left: emoce mi ještě doznívaj ze včerejšího večera
+        -> Right: v pandemii to bylo lepší, lidi sem si zval rovnou domu a nebylo to creepy
+        -> Right: mi povídej. Vzala jsem ji na její první výstavu v životě. 
+        <<jump Node1NesnasimKdyz>>
 -> Left: Někdo tak hot jako Keith Harring tady beztak chybí...
+    -> Right: taky miluju týpky s rozčepýřenýma vlasama...
+        <<jump Node1HarringA>>
+    -> Right: brejle jsou hot, i když by šlo třeba o kurátora...
+        <<jump Node1HarringA>>
+    -> Right: Pravda, že ten mě donutil přehodnotit orientaci
+        <<jump Node1HarringB>>
 -> Left: Mám navíc pocit, že jsem to kolem nás už někdy viděla..
+    -> Right: Tinder all over again
+    -> Right: Baddo all over again
+    -> Right: Grindr all over again
+    <<jump Node1TakyNesnasim>>
 
-<<jump EndGallery>>
+===
+
+title: Node1NesnasimKdyz
+position: 82,-61
+---
+
+-> Left: ... nesnáším když je jasný, že jde od začátku o sex
+    -> Right: Haha
+    -> Right: Ehm...
+    -> Right: Pch.
+    <<jump Node1Sex>>
+-> Left: ... nesnáším když lžou o svým znamení
+    -> Right: Haha
+    -> Right: Ehm...
+    -> Right: Pch.
+    <<jump Node1Znameni>>
+-> Left: ... nesnáším když se na prvním rande bavíš o těch minulejch
+    -> Right: Haha
+    -> Right: Ehm...
+    -> Right: Pch.
+    <<jump Node1MinulyRande>>
+
+===
+
+title: Node1Sex
+position: 270,-188
+---
+
+-> Left: Nechtěla jsem hookupshamovat!
+    -> Right: Nejhorší je stejně kinkshaming..
+    -> Right: V pohodě, tinder stigma je věčný.
+    <<jump Node1SexA>>
+-> Left: Taky hledám takzvaně skutečný spojení. 
+    <<jump Node1SexB>>
+-> Left: No dobře, taky jsem měla... 
+    -> Left: 5 one night stands.
+    -> Left: 3 one night stands.
+    -> Left: 10 one night stands.
+    <<jump Node1SexB>>
+
+===
+
+title: Node1SexA
+position: 390,-271
+---
+
+-> Left: Zvlášť, když kink apropriujou novomediální umělci.
+    Right: There's no ethical consumption under capitalism.
+    <<jump Node1SmyslLeft1>>
+-> Left: Jednou na mě holka vytáhla roubík. To jsem nedala.
+    -> Right: Chápu. Taky jsem vanilla. Musel jsem si to napsat na profil.
+    -> Right: Já mám nejradši queer kink. Víc barevnej, míň ocelovej.
+
+    Left: Kink nekink,stejně to je jen záplata.
+    <<jump Node1SexAA>>
+-> Left: Já shamuju jen, když má někdo tinder gold.
+    Right: There's no ethical consumption under capitalism.
+    <<jump Node1SmyslLeft1>>
+
+===
+
+title: Node1SexB
+position: 607,-192
+---
+
+-> Right: Tinder stigma je věčný.
+    <<jump Node1SexA>>
+-> Right: A už jsi přišla na to, jestli je vůbec možný to neoliberální odcizení překonat?
+    <<jump Node1SmyslLeft1>>
+
+===
+
+title: Node1SmyslLeft1
+position: 856,-283
+---
+
+-> Left: Pořád věřím, že smysl ti můžou dát děti
+-> Left: Pořád věřím, že smysl ti může dát... umění
+-> Left: Pořád věřím, že smysl ti může dát přátelství.
+-> Left: Pořád věřím, že smysl ti může dát láska. Jakákoliv..
+
+<<jump Node1SmyslLeft2>>
+
+===
+
+title: Node1SmyslLeft2
+position: 1085,-284
+---
+
+-> Right: Tak to jsme na dobrým místě.
+    -> Left: Tak pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Left: Je trochu zima. Pojďme zpátky.
+        <<jump EndGallery>>
+-> Right: Tak to jsem tu správně.
+    -> Left: Tak pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Left: Je trochu zima. Pojďme zpátky.
+        <<jump EndGallery>>
+-> Right: Hm. Když říkáš.
+    -> Left: ... chápu. Pojďme radši změnit prostředí. 
+        <<jump EndPub>>
+    -> Left: ... chápu. Je trochu zima. Pojď zpátky.
+        <<jump EndGallery>>
+
+===
+
+title: Node1SmyslRight1
+position: 785,-410
+---
+
+-> Right: Pořád věřím, že smysl ti můžou dát děti
+-> Right: Pořád věřím, že smysl ti může dát... umění
+-> Right: Pořád věřím, že smysl ti může dát přátelství.
+-> Right: Pořád věřím, že smysl ti může dát láska. Jakákoliv..
+
+<<jump Node1SmyslRight2>>
+
+===
+
+title: Node1SmyslRight2
+position: 1018,-412
+---
+
+-> Left: Tak to jsme na dobrým místě.
+    -> Right: Tak pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Right: Je trochu zima. Pojďme zpátky.
+        <<jump EndGallery>>
+-> Left: Tak to jsem tu správně.
+    -> Right: Tak pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Right: Je trochu zima. Pojďme zpátky.
+        <<jump EndGallery>>
+-> Left: Hm. Když říkáš.
+    -> Right: ... chápu. Pojďme radši změnit prostředí. 
+        <<jump EndPub>>
+    -> Right: ... chápu. Je trochu zima. Pojď zpátky.
+        <<jump EndGallery>>
+
+===
+
+title: Node1SexAA
+position: 506,-341
+---
+
+-> Left: Zvlášť, když kink apropriujou novomediální umělci.
+    Right: There's no ethical consumption under capitalism.
+    <<jump Node1SmyslLeft1>>
+-> Left: Jednou na mě holka vytáhla roubík. To jsem nedala.
+    -> Right: Chápu. Taky jsem vanilla. Musel jsem si to napsat na profil.
+    -> Right: Já mám nejradši queer kink. Víc barevnej, míň ocelovej.
+
+    Left: Kink nekink,stejně to je jen záplata.
+    <<jump Node1SmyslRight1>>
+
+-> Left: Já shamuju jen, když má někdo tinder gold.
+    Right: There's no ethical consumption under capitalism.
+    <<jump Node1SmyslLeft1>>
+
+===
+
+title: Node1Znameni
+position: 328,-84
+---
+
+-> Left: Typickej rak.
+-> Left: Ty sis nikdy neukazovala navzájem co-star?
+-> Left: Jo , a taky když zapomenou na ascendent.
+
+<<jump Node1ZnameniA>>
+
+===
+
+title: Node1ZnameniA
+position: 575,-83
+---
+
+-> Right: Hele, já to, jakou odpověď kdo na neoliberální odcizení má, nesoudím.
+    <<jump Node1SmyslLeft1>>
+-> Right: Pokud podle hvězd nebudeme vybírat sedačku pro dítě, tak dobrý.
+    Left: Já shamuju jen, když má někdo tinder gold.
+    Right: There's no ethical consumption under capitalism.
+    <<jump Node1SmyslLeft1>>
+
+===
+
+title: Node1MinulyRande
+position: 344,-6
+---
+-> Left: No, já jednou šel ven s týpkem, co nikdy nebyl ani v muzeu, ani v galerii.
+    <<jump Node1MinulyRandeA>>
+-> Left: Jasně, jasně, však stejně to je všechno archivovaný na Instagramu..
+    <<jump Node1MinulyRandeA>>
+-> Left: Na druhou stranu... co umění o rande? hm?
+    Right: Nemusí být všechno hned meta!
+    Right: Postmoderní reakce na úzkost z bezcílnýho života.
+    <<jump Node1SmyslLeft1>>
+
+===
+
+title: Node1MinulyRandeA
+position: 560,-4
+---
+-> Right: Moje nejmilejší rande bylo na hvězdárně.
+    Right: Koukai jsme na saturn. Skoro jsem brečela. Nevýznamnost existence, chápeš.
+-> Right: Moje nejmilejší rande bylo v zahrádkářský kolonii.
+    Right: Procházeli jsme se mezi karafiáty, rostoucím pórkem.
+    Right: Cítil sem evýznamnost lidský existence, chápeš.
+
+<<jump Node1SmyslLeft1>>
+===
+
+
+title: Node1HarringA
+position: 88,134
+---
+
+-> Left: U mě je nejdůležitější, jestli si sednem
+    -> Left: politicky
+    -> Left: ascendentem
+-> Left: Já jsem sapiosexuálka, záleží mi na tom, co má
+    -> Left: v hlavě
+    -> Left: v portfoliu
+
+<<jump Node1Harring2>>
+
+===
+
+title: Node1HarringB
+position: 86,204
+---
+
+-> Left: U mě to byla Arca
+-> Left: U mě to byl Anish Kapoor
+-> Left: U mě to byl Max*ine Vajt
+-> Left: U mě to byla Hito Steyerl
+-> Left: U mě to byla Sophie
+-> Left: U mě to byl Jiří Černický
+
+<<jump Node1HarringBA>>
+
+===
+
+title: Node1HarringBA
+position: 288,204
+---
+
+-> Right: Chápu, já miluju udělaný nohy...
+-> Right: Chápu, já miluju charizmatický ruce...
+-> Right: Chápu, já miluju krátký vlasy...
+-> Right: Chápu, já miluju vyrýsovaný ramena...
+-> Right: Chápu, já miluju hluboký oči...
+-> Right: Chápu, já miluju hezký břicha...
+
+<<jump Node1HarringBAA>>
+
+===
+
+title: Node1HarringBAA
+position: 539,205
+---
+
+-> Left: Podle mě je taky důležitý, jakou má životní zkušenost. A tak. 
+-> Left: Podle mě je taky důležitý, jakej je věkovej rozdíl. A jak je zkušenej. V posteli.
+
+<<jump Node1Harring2>>
+
+===
+
+title: Node1Harring2
+position: 581,134
+---
+
+-> Right: A taky, co si myslí o konsentu.
+    Left: Přijde mi hot, když se někdo průběžně ptá, jestli je všechno ok.
+    -> Right: Ponížení jen se souhlasem.
+    -> Right: A nebojíš se, že se tím připravíš o překvapení?
+    <<jump Node1Konsent>>
+-> Right: A taky na jaký kouká porno.
+    Left: Taky nevím, co si myslím o hentai.
+    -> Right: Kinky porno schvaluju. Chtěl bych ho vidět s nima.
+    -> Right: Male gaze. Sexualizace malých holek. Nope.
+    <<jump Node1Porno>>
+-> Right: A taky kde kupuje oblečení.
+    Left: Kdo na ty designérský kousky z Recycle Vintage Store má?
+    -> Right: Tak sekáč.
+    -> Right: Stačí trochu šetřit. Lepší než bangladéšský koncentráky.
+    <<jump Node1Obleceni>>
+
+===
+
+title: Node1Konsent
+position: 858,133
+---
+
+-> Left: Přes konsent nejede vlak. Retraumatizaci nepotřebuju.
+-> Left: Důvěra je zásadní. Ale po prvním, ani třetím rande ji mít nemůžeš...
+
+Left: Moje tělo, moje pravidla.
+
+<<jump Node1Harring3>>
+
+===
+
+title: Node1Porno
+position: 861,185
+---
+
+-> Left: Bacha se musí dávat hlavně na to, jestli je to porno etický.
+-> Left: Věděl si, že se dělají dračí dilda? Fakt!
+
+Left: I kinky porno může bejt zdravý.
+Left: Hlavně o tom mluvit.
+
+<<jump Node1Harring3>>
+
+===
+
+title: Node1Obleceni
+position: 856,254
+---
+
+-> Left: Neboj, však svůj latex mám jen od diy českých brandů.
+-> Left: Neboj, však svoje techno topy mám jen od diy českých brandů.
+
+Left: Ale oblečení je jen jedna věc.
+Left: Jde o přístup.
+
+<<jump Node1Harring3>>
+
+===
+
+title: Node1Harring3
+position: 1102,164
+---
+
+-> Right: Promiň, jasně...
+-> Right: Tak to souhlasíme.
+
+<<jump Node1Harring4>>
+
+===
+
+title: Node1Harring4
+position: 1316,164
+---
+
+-> Left: Vlastně mi není jasný, jestli jseš kinky nebo ne.
+-> Left: Vlastně mi není jasný, jestli ti nevadí se o tom takhle otevřeně bavit.
+
+<<jump Node1Harring5>>
+===
+
+title: Node1Harring5
+position: 1548,163
+---
+
+-> Right: Právě jsem chtěl říct, že bysme mohli změnit téma.
+    -> Left: Tak pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Left: Je trochu zima. Pojďme zpátky.
+        <<jump EndGallery>>
+-> Right: Je to trochu hrr. Ale zábavný.
+    -> Left: Tak co změnit prostředí?
+        <<jump EndPub>>
+    -> Left: Můžeme třeba pokračovat vevnitř. Je trochu zima.
+        <<jump EndGallery>>
+-> Right: Záleží, jestli mám top nebo bottom náladu. 
+    Left: A co teď?
+    -> Right: Top. Tos nepoznal? 
+        -> Left: Ehm...tak pojďme změnit prostředí.
+            <<jump EndPub>>
+        -> Left: Ehm...Je trochu zima. Pojďme zpátky.
+            <<jump EndGallery>>
+    -> Right: Bottom. Tos nepoznal? 
+        -> Left: Ehm...tak pojďme změnit prostředí.
+            <<jump EndPub>>
+        -> Left: Ehm...Je trochu zima. Pojďme zpátky.
+            <<jump EndGallery>>
+-> Right: To sis mě nevygooglila?
+    -> Left: Chci bejt překvapenej.
+        -> Right: haha, tak jo. Pojďme se ale překvapovat někam jinam.
+            <<jump EndPub>>
+        -> LeRightft: haha, tak jo. Pojďme se překvapovat dovnitř, je zima.
+            <<jump EndGallery>>
+    -> Left: Naživo je vyzvídat větší zábava. I když už třeba ty tajemství vim...
+        -> Right: haha, tak jo. Pojďme se ale překvapovat někam jinam.
+            <<jump EndPub>>
+        -> LeRightft: haha, tak jo. Pojďme se překvapovat dovnitř, je zima.
+            <<jump EndGallery>>
+
+===
+
+title: Node1TakyNesnasim
+position: 73,366
+---
+-> Left: taky nesnáším cestování
+    -> Right: V Miláně jsem měla fakt špatnou trojku
+    -> Right: Společný cesty tramvají na one night stand jsou nejhorší
+    <<jump Node1TakyNesnasimA>>
+-> Left: taky nesnáším bathroom dickpics
+    -> Right: já občas nějakej pošlu, konsenzuálně. Baví mě pracovat s koupelnovým světlem
+    -> Right: já svoje sekundární pohlavní znaky neznám. Nevím, jak bejt hot. Myslíš, že je to vážnej nedostatek?
+-> Left: taky nesnáším rádobycool fotky v galerii
+    -> Right: Fotky na seznamku jedině z postele.
+    -> Right: Fotky na seznamku jedině z hor.
+-> Left: taky nesnáším thrist traps z posilky
+    -> Right: Taky se občas vyfotím, v legínách, doufám, že dostanu lajky.
+    -> Right: Taky se občas vyfotim, stylově, ale polonaze, doufám, že někdo napíše...
+
+<<jump Node1TakyNesnasimB>>
+
+===
+
+title: Node1TakyNesnasimA
+position: 304,474
+---
+-> Left: musíme zapracovat na kvalitě swajpů
+-> Left: co i zaplatit radši tinder gold?
+
+<<jump Node1TakyNesnasim2>>
+===
+
+title: Node1TakyNesnasimB
+position: 308,359
+---
+-> Left: vlastně to je docela cute
+-> Left: no, ještě bych na tom zapracoval.
+
+<<jump Node1TakyNesnasim2>>
+===
+
+title: Node1TakyNesnasim2
+position: 557,405
+---
+
+Right: No dobře, zvážím to.
+Right: když už jsme u toho, kdo byl tvůj poslední crush?
+
+-> Left: Grimes. její alien kyborg persona je hot.
+-> Left: John Cage. Vyzrál fakt do milýho cool chlapáctví.
+-> Left: Collin Farrel. Nemusím vysvětlovat, doufám.
+-> Left: Leya Seydoux. V Death Stranding i Bond. 
+-> Left: Juliana Huxtable. For real.
+-> Left: Robert Pattinson. Nosí sukně, víš co.
+-> Left: Dita Von Teese, vlastně fakt cením burlesky.
+-> Left: Arca. Jde si prostě mega za svým.
+
+<<jump Node1TakyNesnasim3>>
+===
+
+title: Node1TakyNesnasim3
+position: 794,409
+---
+
+-> Right: Slušný. 
+-> Right: Jako cože? 
+-> Right: Můžu chvíli snít s tebou?
+
+<<jump Node1TakyNesnasim4>>
+
+===
+
+title: Node1TakyNesnasim4
+position: 1022,400
+---
+
+-> Left: Teď ty. Ale český.
+    <<jump Node1Cesky>>
+-> Left: Teď ty. Ale nesměj bejt slavný..
+    Right: Dobře, ale beze jmen!
+    <<jump Node1Neslavny>>
+
+===
+
+title: Node1Cesky
+position: 1220,341
+---
+-> Right: Jiří David. Nemůžu zapomenout na ty kolíky
+-> Right: Max Dvořák. Bienále ve věci umění je hot.
+-> Right: Valentýna Janů, chtěl bych s ní na ball.
+-> Right: Darina Alster. Dát tarot a pak bdsm scénku.
+-> Right: Knížák. Umanutej. A já jsem na daddy typy.
+-> Right: Radek Brousil. Jemnej romantik.
+-> Right: Evil Medvěd. A vysněný rande je ambient v punctu.
+-> Right: Jirka Skála. Konceptuální musí bejt i v posteli.
+-> Right: Ty!
+    <<jump Node1TyLeft>>
+
+<<jump Node1Cesky1>>
+
+
+===
+
+title: Node1Cesky1
+position: 1527,322
+---
+-> Left: Dobrej typ!
+-> Left: Tyjo, fakt se neshodnem.
+-> Left: Tak asi na něm něco bude...
+
+<<jump Node1CrushReakce>>
+===
+
+title: Node1CrushReakce
+position: 1818,343
+---
+-> Right: To víš, čekám, jestli se nedoswipuju na Tinderu.
+    -> Left: Tak co zkusit Badoo?
+    -> Left: Tak co zkusit Bumble?
+    -> Left: Tak co zkusit Grindr?
+    <<jump Node1CrushReakce2>>
+-> Right: No, nejkrásnější sny jsou ty nezkažený...
+    -> Left: Ale taky to nemusí bejt sen jedinej. 
+        <<jump Node1TyRight>>
+    -> Left: Sny jsou bez činů k ničemu.
+        -> Right: Kdybych to nevěděla, nechodím na terapii.
+        -> Right: A ty vždycky jako viš, co máš dělat? 
+        <<jump Node1VsakVtipLeft>>
+
+===
+
+title: Node1CrushReakce2
+position: 1965,252
+---
+-> Right: Vypadám snad jako zoufalec?
+-> Right: Vypadám snad jako pozér?
+
+<<jump Node1VsakVtipLeft>>
+===
+
+title: Node1TyLeft
+position: 1523,420
+---
+Left: No...
+
+-> Left: Trochu brzo ne?
+    <<jump Node1VsakVtipRight>>
+-> Left: Napadlo mě říct tě taky.
+    -> Right: No tak jo... Tak... pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Right: Noo.. než budeme pokračovat, pojďme ještě dovnitř. je chlad, no ne?
+        <<jump EndGallery>>
+===
+
+title: Node1TyRight
+position: 1523,420
+---
+Right: No...
+
+-> Right: Trochu brzo ne?
+    <<jump Node1VsakVtipLeft>>
+-> Right: Napadlo mě říct tě taky.
+    -> Left: No tak jo... Tak... pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Left: Noo.. než budeme pokračovat, pojďme ještě dovnitř. je chlad, no ne?
+        <<jump EndGallery>>
+===
+
+title: Node1VsakVtipLeft
+position: 2179,383
+---
+Left: Však vtip, ne?
+-> Right: Ehm... tak pojďme změnit prostředí.
+    <<jump EndPub>>
+-> Right: Ehm... Je trochu zima. Pojďme zpátky.
+    <<jump EndGallery>>
+===
+
+title: Node1VsakVtipRight
+position: 1883,450
+---
+Right: Však vtip, ne?
+-> Left: Ehm... tak pojďme změnit prostředí.
+    <<jump EndPub>>
+-> Left: Ehm... Je trochu zima. Pojďme zpátky.
+    <<jump EndGallery>>
+===
+
+title: Node1Neslavny
+position: 1233,532
+---
+-> Right: Ty!
+    <<jump Node1TyLeft>>
+-> Right: Pracuje ve vedlejším oddělení, občas nosí metalový trika, cejtim spřízněnost!
+-> Right: Moje spolubydlící. Máme podobnej vkus na filmy, ale bojím se, že je zadaná.
+-> Right: No... je to jedna TikTok influencerka. Dělá super queer mikroeseje. A je krásná.
+-> Right: Fotbalista od nás z města. Chytrej. Pohlednej. Má dobrý tělo. 
+-> Right: Kamarád. Neví to, ale sdílíme spolu fakt všechno, chodíme často na party...
+-> Right: Sleduju na IG jednu holku co plete vlastní svetry a fotí se v nich. Miluju to.
+-> Right: Chodí na fildu. Potkáváme se na demoškách, vibujeme.
+
+<<jump Node1Neslavny2>>
+===
+
+title: Node1Neslavny2
+position: 1442,532
+---
+-> Left: A budeš s tím něco dělat?
+    <<jump Node1CrushReakce>>
+-> Left: Neopětovaný lásky sou ty nejhorší.
+    -> Right: Jaký lásky? Řeklo se crush!
+        -> Left: Ta hranice je tenká.
+            -> Right: Stejně tak mezi crushem a náhodným setkáním...
+                <<jump Node1TyLeft>>
+            -> Right: Když víš, tak víš.
+                -> Left: Čím si ale začínám být jistá je tenhle rozhovor...
+                -> Left: Kdybych věděla, nechodím na terapii.
+                <<jump Node1VsakVtipRight>>
+        -> Left: Někde se začít musí.
+            -> Right: Když já se stydím. Mám sociální fóbii.
+            -> Right: Nejsem dost hot. Komplexy z dětství.
+            -> Right: Nejsem jeho typ. Orientaci si nevybereš.
+            <<jump Node1Neslavny3>>
+    -> Right: Pořád věřím, že to vyjít může.
+        Left: A budeš s tím něco dělat?
+        <<jump Node1CrushReakce>>
+===
+
+title: Node1Neslavny3
+position: 1643,568
+---
+-> Left: Podle mě seš super.
+    -> Right: No tak jo... Tak... pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Right: No tak jo... než budeme pokračovat, pojďme ještě dovnitř. je chlad, no ne?
+        <<jump EndGallery>>
+-> Left: Ale di. Musíš si věřit!
+    -> Right: No tak jo... Tak... pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Right: No tak jo... než budeme pokračovat, pojďme ještě dovnitř. je chlad, no ne?
+        <<jump EndGallery>>
+-> Left: Hmm. Chápu. Ale tak nikdy nevíš jak v pohodě to může dopadnout.
+    -> Right: Ehm...tak pojďme změnit prostředí.
+        <<jump EndPub>>
+    -> Right: Ehm...Je trochu zima. Pojďme zpátky.
+        <<jump EndGallery>>
 
 ===
 
 
-
-
-
 title: EndGallery
+position: 2342,-198
 ---
-<<end_act LevelCanvas "Na versnišáži zůstali už jen umělci*kyně a kurátor*ka">>
+<<end_act LevelCanvas "Na versnišáži zůstali už jen umělci*kyně a kurátor*ka" "gallery">>
 ===
 
 
 title: EndPub
+position: 2316,-256
 ---
-<<end_act LevelCanvas "Dosedli do hospody">>
+<<end_act LevelCanvas "Dosedli do hospody" "pub">>
 ===
