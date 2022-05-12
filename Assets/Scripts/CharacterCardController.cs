@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -19,9 +17,12 @@ public class CharacterCardController : MonoBehaviour
 
     [HideInInspector] public UnityEvent<EPlayer, bool, int> confirmationChange;
 
+    private GameManager gameManager;
+
     private void Start()
     {
-        cardSprites = FindObjectOfType<GameManager>().characterSprites;
+        gameManager = FindObjectOfType<GameManager>();
+        cardSprites = gameManager.characterSprites;
 
         curSelection = 0;
         card.sprite = cardSprites[curSelection];
@@ -56,6 +57,9 @@ public class CharacterCardController : MonoBehaviour
         if (Time.time - lastMoved < Utility.axisDelta) return;
         lastMoved = Time.time;
 
+        // play sound
+        gameManager.audioManager.PlayNext();
+
         // deselect and deconfirm current
         icons[curSelection].Deselect();
         Confirm(false);
@@ -76,6 +80,9 @@ public class CharacterCardController : MonoBehaviour
         Confirm(true);
         // confirm icon
         icons[curSelection].Confirm();
+
+        // play sound
+        gameManager.audioManager.PlayPress();
     }
 
     private void Confirm(bool confirm)

@@ -73,6 +73,8 @@ public class DialogueOptionController : DialogueBubbleController
         if (Time.time - lastMoved < Utility.axisDelta) return;
         lastMoved = Time.time;
 
+        gameManager.audioManager.PlayNext();
+
         // deselect current
         myDialogueOptions[curSelection].Deselect();
 
@@ -101,6 +103,8 @@ public class DialogueOptionController : DialogueBubbleController
         // order matters !
         onSelectionComplete?.Invoke();
         onOptionSelected?.Invoke(myDialogueOptions[curSelection].GetOptionID());
+
+        gameManager.audioManager.PlayPress();
 
         optionsActive = false;
 

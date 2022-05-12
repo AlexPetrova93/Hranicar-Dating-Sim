@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     // level
     private LevelManager levelManager;
 
+    public AudioManager audioManager;
+
 
     void Start()
     {
@@ -36,11 +38,20 @@ public class GameManager : MonoBehaviour
 
         // fade from black
         this.Tween<float>(
-            (from, to, t) => blackScreen.alpha = Mathf.Lerp(from, to, t),
+            (from, to, t) => 
+            {
+                blackScreen.alpha = Mathf.Lerp(from, to, t);
+                audioManager.LerpVolume(from, to, t);
+            },
             1,
             0,
             Utility.fadeTime            
         );
+
+        if (SceneManager.GetActiveScene().buildIndex < Utility.mainLevelBuildIndex)
+        {
+            audioManager.SetAmbience(ESetting.Menu);
+        }
 
         levelManager = FindObjectOfType<LevelManager>();
         if (SceneManager.GetActiveScene().buildIndex == Utility.mainLevelBuildIndex && levelManager)
@@ -62,7 +73,11 @@ public class GameManager : MonoBehaviour
     {
         //fade to black then load next scene
         this.Tween<float>(
-            (from, to, t) => blackScreen.alpha = Mathf.Lerp(from, to, t),
+            (from, to, t) =>
+            {
+                blackScreen.alpha = Mathf.Lerp(from, to, t);
+                audioManager.LerpVolume(from, to, t);
+            },
             0,
             1,
             Utility.fadeTime,
@@ -74,7 +89,11 @@ public class GameManager : MonoBehaviour
     {
         //fade to black then load next scene
         this.Tween<float>(
-            (from, to, t) => blackScreen.alpha = Mathf.Lerp(from, to, t),
+            (from, to, t) =>
+            {
+                blackScreen.alpha = Mathf.Lerp(from, to, t);
+                audioManager.LerpVolume(from, to, t);
+            },
             0,
             1,
             Utility.fadeTime,

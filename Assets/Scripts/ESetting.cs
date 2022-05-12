@@ -6,7 +6,8 @@ public enum ESetting
     Gallery,
     Street, 
     Pub,
-    Noise
+    Noise,
+    Menu
 }
 
 public static class ESettingExtensions

@@ -43,6 +43,7 @@ public class LevelManager : MonoBehaviour
         SetUpYarnProjectDictionary();
         currentAct = EAct.Seznameni;
         //StartNextAct(EAct.Seznameni);
+        gameManager.audioManager.SetAmbience(ESetting.Gallery);
     }
 
     private void Update()
@@ -51,6 +52,7 @@ public class LevelManager : MonoBehaviour
         {
             wantsToReturnToMain = false;
             gameManager.ReturnToMain();
+            gameManager.audioManager.PlayPress();
         }
     }
 
@@ -64,6 +66,7 @@ public class LevelManager : MonoBehaviour
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         SetUpYarnProjectDictionary();
         //StartNextAct(EAct.Seznameni);
+        gameManager.audioManager.SetAmbience(ESetting.Gallery);
     }
 
     private void SetUpYarnProjectDictionary()
@@ -116,7 +119,11 @@ public class LevelManager : MonoBehaviour
         BlackInterlude(
             Utility.fadeTime,
             Utility.sceneScreenStayTime,
-            whenInBlack: () => SetRandomBackground(text.ToESetting())            
+            whenInBlack: () =>
+            {
+                SetRandomBackground(text.ToESetting());
+                gameManager.audioManager.SetAmbience(text.ToESetting());
+            }            
         );
     }
 
@@ -136,6 +143,7 @@ public class LevelManager : MonoBehaviour
             {
                 SetRandomBackground(setting.ToESetting());
                 StartNextAct(currentAct.ToNextEAct(setting.ToESetting()));
+                gameManager.audioManager.SetAmbience(setting.ToESetting());
             }
         );
     }
@@ -152,7 +160,11 @@ public class LevelManager : MonoBehaviour
     public void EndGame()
     {
         this.Tween<float>(
-            (from, to, t) => creditsCanvas.alpha = Mathf.Lerp(from, to, t),
+            (from, to, t) => 
+            { 
+                creditsCanvas.alpha = Mathf.Lerp(from, to, t); 
+                gameManager.audioManager.LerpVolume(from, to, t);
+            },
             0,
             1,
             Utility.fadeTime,
@@ -173,7 +185,11 @@ public class LevelManager : MonoBehaviour
 
         // fade to black
         this.Tween<float>(
-            (from, to, t) => sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t),
+            (from, to, t) =>
+            {
+                sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t);
+                gameManager.audioManager.LerpVolume(from, to, t);
+            },
             0,
             1,
             fadeTime,
@@ -187,7 +203,11 @@ public class LevelManager : MonoBehaviour
                     waitTime,
                     continueAction: () => {
                         this.Tween<float>(
-                            (from, to, t) => sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t),
+                            (from, to, t) =>
+                            {
+                                sceneChangeCanvas.alpha = Mathf.Lerp(from, to, t);
+                                gameManager.audioManager.LerpVolume(from, to, t);
+                            },
                             1,
                             0,
                             fadeTime,

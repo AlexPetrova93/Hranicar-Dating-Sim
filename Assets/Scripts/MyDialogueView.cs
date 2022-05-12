@@ -26,9 +26,10 @@ public class MyDialogueView : DialogueViewBase
 
     private void Update()
     {
-        // call this on confirm ! - keep track of which player is currently in control !
         if (gameManager.PlayersInControl && Input.GetButtonDown(playerInControl.Confirm()))
         {
+            gameManager.audioManager.PlayPress();
+
             if (currentlyWriting)
             {
                 wishesToInterrupt = true;
@@ -65,6 +66,7 @@ public class MyDialogueView : DialogueViewBase
     private IEnumerator WriteText(DialogueLineController dialogueBubble, string text)
     {
         currentlyWriting = true;
+        gameManager.audioManager.PlayTyping();
         foreach (char letter in text)
         {
             if (wishesToInterrupt) break;
@@ -78,12 +80,14 @@ public class MyDialogueView : DialogueViewBase
 
         currentlyWriting = false;
         wishesToInterrupt = false;
+        gameManager.audioManager.StopTyping();
     }
 
     public override void InterruptLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {
         Debug.Log("Interupting line");
         StopAllCoroutines();
+        gameManager.audioManager.StopTyping();
 
         (currentBubble as DialogueLineController).SetText(dialogueLine.TextWithoutCharacterName.Text);
 
